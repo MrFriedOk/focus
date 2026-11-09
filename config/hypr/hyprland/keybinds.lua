@@ -13,3 +13,5 @@ for i = 1, 10 do
 		hl.dispatch(hl.dsp.window.move({ workspace = i, follow = true }))
 	end)
 end
+
+hl.bind("SUPER + Q", hl.dsp.window.close())
