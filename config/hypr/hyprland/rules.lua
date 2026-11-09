@@ -4,9 +4,9 @@ local w, h, step = 900, 600, 32
 hl.window_rule({
 	match = { class = "kitty" },
 	opacity = opacity,
-	float = true,
+	--float = true,
 	size = { w, h },
-	move = { "(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2" },
+	--	move = { "(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2" },
 })
 
 hl.window_rule({ match = { class = ".*" }, suppress_event = "maximize" })
@@ -14,7 +14,7 @@ hl.window_rule({ match = { class = ".*" }, suppress_event = "maximize" })
 hl.on("window.open", function(w)
 	if not w or w.class ~= "kitty" then
 		return
-	end
+	end --ignore all not kitty things
 
 	local n = 0
 	for _, win in ipairs(hl.get_windows()) do
