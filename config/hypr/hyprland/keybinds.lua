@@ -24,5 +24,8 @@ hl.bind("SUPER + Q", hl.dsp.window.close())
 
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 
+--you can have multiple special workspaces!!! :O
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.window.move({ workspace = "special:special" }))
+hl.bind("SUPER + ALT + S", hl.dsp.workspace.toggle_special("special"))
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
