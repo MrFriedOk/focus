@@ -7,7 +7,7 @@ hl.config({
 		border_size = 3,
 
 		col = {
-			active_border = "rgba(686868ff)",
+			active_border = { colors = { "rgba(5BCEFAFF)", "rgba(F5A9B8FF)", "rgba(FFFFFFFF)" }, angle = 45 },
 			inactive_border = "rgba(828282ff)",
 		},
 		resize_on_border = false, --drag window with this
