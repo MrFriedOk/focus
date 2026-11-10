@@ -27,7 +27,7 @@ hl.config({
 
 		blur = {
 			enabled = true,
-			xray = true,
+			xray = false,
 			special = false, --wat's dis?
 			new_optimizations = true, --needed for xray
 			size = 3,
