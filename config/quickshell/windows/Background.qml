@@ -9,5 +9,6 @@ PanelWindow {
         left: true
         right: true
     }
+    color: "transparent"
     WlrLayershell.layer: WlrLayer.Background
 }
