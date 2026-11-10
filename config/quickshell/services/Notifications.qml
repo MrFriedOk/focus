@@ -2,14 +2,16 @@ import Quickshell
 import QtQuick
 import Quickshell.Services.Notifications
 
-NotificationServer {
-    id: server
+Scope {
+    NotificationServer {
+        id: server
 
-    actionsSupported: true
-    imageSupported: true
-    bodyMarkupSupported: true
+        actionsSupported: true
+        imageSupported: true
+        bodyMarkupSupported: false
 
-    onNotification: notification => {
-        notification.tracked = true;
+        onNotification: notification => {
+            notification.tracked = true;
+        }
     }
 }

@@ -6,7 +6,6 @@ import "windows" as W
 import "services" as S
 
 ShellRoot {
-    S.Notifications {}
     S.Lock {}
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
@@ -20,4 +19,6 @@ ShellRoot {
         //visible: false
         WlrLayershell.layer: WlrLayer.Top
     }
+
+    S.Notifications {}
 }

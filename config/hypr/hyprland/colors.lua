@@ -4,10 +4,10 @@ hl.config({
 		gaps_out = 3,
 		gaps_workspaces = 3,
 
-		border_size = 3,
+		border_size = 1,
 
 		col = {
-			active_border = { colors = { "rgba(5BCEFAFF)", "rgba(F5A9B8FF)", "rgba(FFFFFFFF)" }, angle = 45 },
+			active_border = "rgba(767676ff)", --active_border = { colors = { "rgba(5BCEFAFF)", "rgba(F5A9B8FF)", "rgba(FFFFFFFF)" }, angle = 45 },
 			inactive_border = "rgba(828282ff)",
 		},
 		resize_on_border = false, --drag window with this
