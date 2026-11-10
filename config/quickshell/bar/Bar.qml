@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import QtQuick.Shapes
 import qs.data as D
 import "panels" as P
 
@@ -10,6 +11,7 @@ Scope {
     readonly property int float: D.General.bar.float
     readonly property int radius: D.General.radius
     readonly property list<string> panels: [""]
+
     PanelWindow {
         //fake bar
         implicitWidth: exclusiveZone
@@ -22,6 +24,7 @@ Scope {
             left: true
         }
     }
+
     PanelWindow {
         //the 'master' window
         color: "transparent"
@@ -42,21 +45,46 @@ Scope {
             }
         }
 
-        Rectangle {
+        Shape {
             //the rendered bar
             id: bar
-            width: root.size
-            anchors {
-                left: parent.left
-                top: parent.top
-                bottom: parent.bottom
-                margins: root.float
-            }
-            radius: root.radius
-            color: D.Theme.bg
+            //width: root.size
+            property real thin: 2
+            property real full: root.size
+            property real fillet: root.radius
+            property real corner: 12
+            property real tall: 500
+
+            preferredRendererType: Shape.CurveRenderer
+            //anchors {
+            //    left: parent.left
+            //    top: parent.top
+            //    bottom: parent.bottom
+            //    margins: root.float
+            //}
+            //radius: root.radius
+            //color: D.Theme.bg
 
             P.Clock {
                 id: clockPanel
+            }
+
+            ShapePath {
+                fillColor: D.Theme.bg
+                strokeWidth: -1
+                startX: 0
+                startY: 0
+
+                PathLine {
+                    //start
+                    x: bar.thin
+                    y: 0
+                }
+
+                PathLine {
+                    x: bar.thin
+                    y: bar.tall
+                }
             }
         }
     }
