@@ -10,7 +10,7 @@ C.Dragable {
     readonly property string hrs: String(D.Time.hrs).padStart(2, "0")
     readonly property int padding: 10
     store: D.Moving.clock
-    width: shape.width
+    width: shape.width //+ (clock.progress.value * 10)
     height: shape.height
 
     Shape {
@@ -63,6 +63,7 @@ C.Dragable {
                 font {
                     family: D.General.font.family
                     pointSize: 96
+                    bold: true
                 }
                 color: D.Theme.primary
             }
@@ -80,6 +81,7 @@ C.Dragable {
                 font {
                     family: D.General.font.family
                     pointSize: 96
+                    bold: true
                 }
                 color: D.Theme.primary
             }
