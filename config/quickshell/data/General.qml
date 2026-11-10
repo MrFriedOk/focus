@@ -3,7 +3,7 @@ import QtQuick
 import Quickshell
 
 Singleton {
-    readonly property int gap: 3
+    readonly property int radius: 10
     readonly property QtObject anim: QtObject {
         readonly property int dur: 120
         readonly property int durShort: 80
@@ -12,6 +12,8 @@ Singleton {
     }
     readonly property QtObject bar: QtObject {
         readonly property int size: 20
+        readonly property int gap: 3
+        readonly property int float: 3
     }
     readonly property QtObject font: QtObject {
         readonly property string family: "NMS GeoSans"

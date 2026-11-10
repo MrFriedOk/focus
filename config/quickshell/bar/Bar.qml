@@ -1,17 +1,21 @@
 import Quickshell
 import QtQuick
 import qs.data as D
+import "panels" as P
 
 Scope {
     id: root
     readonly property int size: D.General.bar.size + gap
-    readonly property int gap: D.General.gap
+    readonly property int gap: D.General.bar.gap
+    readonly property int float: D.General.bar.float
+    readonly property int radius: D.General.radius
+    readonly property list<string> panels: [""]
     PanelWindow {
         //fake bar
         implicitWidth: exclusiveZone
         color: "transparent"
         mask: Region {}
-        exclusiveZone: root.size
+        exclusiveZone: root.size + gap
         anchors {
             top: true
             bottom: true
@@ -19,6 +23,7 @@ Scope {
         }
     }
     PanelWindow {
+        //the 'master' window
         color: "transparent"
         exclusionMode: ExclusionMode.Ignore
         anchors {
@@ -27,12 +32,13 @@ Scope {
             bottom: true
             right: true
         }
+
         mask: Region {
             Region {
                 item: bar
             }
             Region {
-                item: panel
+                item: clockPanel
             }
         }
 
@@ -44,29 +50,13 @@ Scope {
                 left: parent.left
                 top: parent.top
                 bottom: parent.bottom
-                margins: root.gap
+                margins: root.float
             }
-        }
+            radius: root.radius
+            color: D.Theme.bg
 
-        Item {
-            id: hoverZone
-            anchors {
-                fill: parent
-            }
-            HoverHandler {
-                id: hover
-            }
-
-            Rectangle {
-                id: panel
-                anchors {
-                    left: parent.left
-                    verticalCenter: parent.verticalCenter
-                    leftMargin: bar.width
-                }
-                height: 100
-                width: 200
-                visible: hover.hovered
+            P.Clock {
+                id: clockPanel
             }
         }
     }
