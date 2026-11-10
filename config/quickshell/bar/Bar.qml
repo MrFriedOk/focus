@@ -70,7 +70,7 @@ Scope {
             }
 
             ShapePath {
-                fillColor: D.Theme.bg
+                fillColor: D.Theme.surface
                 strokeWidth: -1
                 startX: 0
                 startY: 0

@@ -13,7 +13,7 @@ PanelWindow {
         left: true
         right: true
     }
-    color: "transparent"
+    color: D.Theme.primary //"transparent"
     WlrLayershell.layer: WlrLayer.Background
     exclusionMode: ExclusionMode.Ignore
 
