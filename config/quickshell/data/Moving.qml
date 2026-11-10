@@ -11,19 +11,12 @@ Singleton {
         property alias x: clock.x
         property alias y: clock.y
     }
-    Timer {
-        interval: 250
-        running: true
-        repeat: true
-        onTriggered: console.log(clock.x, clock.y)
-    }
     FileView {
         id: file
         path: "json/moving.json"
 
         watchChanges: true
         onFileChanged: reload()
-        //onAdapterUpdated: writeAdapter()
 
         JsonAdapter {
             id: adapter
