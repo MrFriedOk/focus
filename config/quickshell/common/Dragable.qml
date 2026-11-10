@@ -10,11 +10,6 @@ Item {
     x: store.x
     y: store.y
     height: 100
-    Rectangle {
-        anchors {
-            fill: parent
-        }
-    }
     DragHandler {
         id: drag
         target: component
