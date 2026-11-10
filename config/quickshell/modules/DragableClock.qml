@@ -8,15 +8,27 @@ C.Dragable {
     readonly property int mins: D.Time.mins
     readonly property int hrs: D.Time.hrs
     store: D.Moving.clock
-    width: 200
-    height: 200
+    width: col.implicitWidth
+    height: col.implicitHeight
 
-    Item {
+    Column {
+        id: col
+        anchors {
+            fill: parent
+        }
         Text {
-            text: 'hi'
-            anchors {
-                fill: parent
+            //top, hours
+            text: clock.hrs
+
+            font {
+                family: D.General.font.family
+                pointSize: 96
             }
+            color: D.Theme.fg
+        }
+        Text {
+            //bottom, mins
+            text: clock.mins
 
             font {
                 family: D.General.font.family
