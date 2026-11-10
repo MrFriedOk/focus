@@ -4,7 +4,9 @@ import Quickshell.Wayland
 import qs.data as D
 
 PanelWindow {
-
+    id: root
+    property int x: D.Moving.clock.x
+    property int y: D.Moving.clock.y
     anchors {
         top: true
         bottom: true
@@ -16,12 +18,9 @@ PanelWindow {
     exclusionMode: ExclusionMode.Ignore
     Rectangle {
         color: D.Theme.bg
-        anchors {
-            fill: parent
-            //centerIn: parent
-        }
         width: 100
-        x: 100
+        x: root.x
+        y: root.y
         height: 100
     }
 }
