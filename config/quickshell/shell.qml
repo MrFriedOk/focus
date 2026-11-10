@@ -6,7 +6,7 @@ import "windows" as W
 import "services" as S
 
 ShellRoot {
-
+    S.Notifications {}
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
         model: Quickshell.screens
