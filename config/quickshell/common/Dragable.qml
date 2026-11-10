@@ -8,7 +8,7 @@ Item {
     property real progress: drag.active ? 1 : 0
     Behavior on progress {
         NumberAnimation {
-            duration: 150
+            duration: 80
         }
     }
 

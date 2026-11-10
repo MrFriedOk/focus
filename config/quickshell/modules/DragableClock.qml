@@ -9,17 +9,18 @@ C.Dragable {
     readonly property string mins: String(D.Time.mins).padStart(2, "0")
     readonly property string hrs: String(D.Time.hrs).padStart(2, "0")
     readonly property int padding: 10
-    store: D.Moving.clock
-    width: shape.width + (10)
-    height: shape.height
+
+    store: D.Moving.clock //where the Dragable access info
+    implicitWidth: 200 //+ (progress * 8) //shape.width
+    implicitHeight: 300 //+ (progress * 8) //shape.height
 
     Shape {
         id: shape
-        anchors {
-            fill: parent
-        }
-        width: col.width + clock.padding
-        height: col.implicitHeight + clock.padding
+        width: parent.width + (clock.progress * 8)
+        height: parent.height + (clock.progress * 8)
+
+        //width: col.width + clock.padding + (clock.progress * 100)
+        //height: col.implicitHeight + clock.padding
         ShapePath {
             id: path
             strokeWidth: -1
@@ -43,51 +44,51 @@ C.Dragable {
                 y: shape.height
             }
         }
-        Column {
-            id: col
-            readonly property int content: hrsTxt.implicitWidth + minsTxt.implicitWidth
-            width: content
+    }
+    Column {
+        id: col
+        //readonly property int content: hrsTxt.implicitWidth + minsTxt.implicitWidth
+        //width: content
+        anchors {
+            fill: parent
+        }
+        Text {
+            id: hrsTxt
             anchors {
-                fill: parent
+                left: parent.left
+                right: parent.right
             }
-            Text {
-                id: hrsTxt
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
-                horizontalAlignment: Text.AlignHCenter
-                //top, hours
-                text: clock.hrs
+            horizontalAlignment: Text.AlignHCenter
+            //top, hours
+            text: clock.hrs
 
-                font {
-                    family: D.General.font.family
-                    pointSize: 96
-                    bold: true
-                }
-                color: D.Theme.primary
+            font {
+                family: D.General.font.family
+                pointSize: 96
+                bold: true
             }
-            Text {
-                id: minsTxt
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
-
-                horizontalAlignment: Text.AlignHCenter
-                //bottom, mins
-                text: clock.mins
-
-                font {
-                    family: D.General.font.family
-                    pointSize: 96
-                    bold: true
-                }
-                color: D.Theme.primary
-            }
+            color: D.Theme.primary
+        }
+        Text {
+            id: minsTxt
             anchors {
-                fill: parent
+                left: parent.left
+                right: parent.right
             }
+
+            horizontalAlignment: Text.AlignHCenter
+            //bottom, mins
+            text: clock.mins
+
+            font {
+                family: D.General.font.family
+                pointSize: 96
+                bold: true
+            }
+            color: D.Theme.primary
+        }
+        anchors {
+            fill: parent
         }
     }
 }

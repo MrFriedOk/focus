@@ -9,7 +9,7 @@ hl.window_rule({
 	--	move = { "(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2" },
 })
 
-hl.workspace_rule({ workspace = "special:special", gaps_out = 4 })
+hl.workspace_rule({ workspace = "special:special", gaps_out = 5 })
 hl.workspace_rule({ workspace = "special:magic", gaps_out = 4 })
 
 hl.window_rule({ match = { class = ".*" }, suppress_event = "maximize" })
