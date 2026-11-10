@@ -8,7 +8,7 @@ C.Dragable {
     id: clock
     readonly property string mins: String(D.Time.mins).padStart(2, "0")
     readonly property string hrs: String(D.Time.hrs).padStart(2, "0")
-    readonly property int padding: 30
+    readonly property int padding: 10
     store: D.Moving.clock
     width: shape.width
     height: shape.height
@@ -18,8 +18,8 @@ C.Dragable {
         anchors {
             fill: parent
         }
-        width: col.implicitWidth + clock.padding
-        height: col.implicitHeight
+        width: col.width + clock.padding
+        height: col.implicitHeight + clock.padding
         ShapePath {
             id: path
             strokeWidth: -1
@@ -46,7 +46,7 @@ C.Dragable {
         Column {
             id: col
             readonly property int content: hrsTxt.implicitWidth + minsTxt.implicitWidth
-            implicitWidth: content
+            width: content
             anchors {
                 fill: parent
             }
