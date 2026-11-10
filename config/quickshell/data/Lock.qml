@@ -13,6 +13,11 @@ Singleton {
         enterAnim.stop();
         exitAnim.restart();
     }
+    function lock() {
+        exitAnim.stop();
+        //locked = true
+        enterAnim.restart();
+    }
 
     property real progress: 0
     property bool locked: false

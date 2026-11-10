@@ -3,5 +3,13 @@ import QtQuick
 import Quickshell.Services.Notifications
 
 NotificationServer {
-    id: root
+    id: server
+
+    actionsSupported: true
+    imageSupported: true
+    bodyMarkupSupported: true
+
+    onNotification: notification => {
+        notification.tracked = true;
+    }
 }
