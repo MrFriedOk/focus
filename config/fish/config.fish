@@ -14,3 +14,8 @@ abbr mkdir 'mkdir -p'
 abbr c 'cp -r'
 
 set fish_greeting ""
+
+#check if starship installed, if so, initialize it!!!!
+if type -q starship
+	starship init fish | source
+end
