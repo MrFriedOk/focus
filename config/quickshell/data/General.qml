@@ -3,6 +3,7 @@ import QtQuick
 import Quickshell
 
 Singleton {
+    readonly property int gap: 3
     readonly property QtObject anim: QtObject {
         readonly property int dur: 120
         readonly property int durShort: 80

@@ -3,11 +3,15 @@ import QtQuick
 import qs.data as D
 
 Scope {
+    id: root
+    readonly property int size: D.General.bar.size + gap
+    readonly property int gap: D.General.gap
     PanelWindow {
         //fake bar
         width: exclusiveZone
         color: "transparent"
-        exclusiveZone: D.General.bar.size
+        mask: Region {}
+        exclusiveZone: root.size
         anchors {
             top: true
             bottom: true
@@ -31,6 +35,18 @@ Scope {
                 item: panel
             }
         }
+
+        Rectangle {
+            id: bar
+            width: root.size
+            anchors {
+                left: parent.left
+                top: parent.top
+                bottom: parent.bottom
+                topMargin: root.gap
+            }
+        }
+
         Item {
             id: hoverZone
             anchors {
@@ -40,15 +56,6 @@ Scope {
                 id: hover
             }
 
-            Rectangle {
-                id: bar
-                anchors {
-                    left: parent.left
-                    top: parent.top
-                    bottom: parent.bottom
-                }
-                width: D.General.bar.size
-            }
             Rectangle {
                 id: panel
                 anchors {
