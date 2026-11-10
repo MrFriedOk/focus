@@ -9,4 +9,7 @@ Singleton {
         readonly property int durLong: 200
         readonly property real damping: .25
     }
+    readonly property QtObject bar: QtObject {
+        readonly property int size: 20
+    }
 }

@@ -7,9 +7,10 @@ import "services" as S
 
 ShellRoot {
     B.Bar {
-        visible: false
+        //visible: false
         WlrLayershell.layer: WlrLayer.Top
     }
+    //stuff to draw every monitor, let's keep it minimal for now
     Variants {
         model: Quickshell.screens
         delegate: W.Background {}
