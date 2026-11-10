@@ -4,5 +4,10 @@ import Quickshell.Wayland
 
 Singleton {
     id: root
-    property bool lock: false
+
+    function toggle() {
+        locked = !locked;
+    }
+
+    property bool locked: true
 }

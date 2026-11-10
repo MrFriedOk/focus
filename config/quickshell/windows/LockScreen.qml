@@ -5,6 +5,8 @@ import qs.data as D
 import Quickshell.Services.Pam
 
 Rectangle {
+    id: root
+    //property bool locked: D.Lock.locked
     anchors {
         top: parent.top
         right: parent.right
@@ -16,6 +18,6 @@ Rectangle {
         anchors {
             fill: parent
         }
-        onClicked: root.locked = false
+        onClicked: D.Lock.toggle()
     }
 }
