@@ -21,6 +21,8 @@ Item {
 
         onActiveChanged: {
             if (!active) {
+                store.x = component.x;
+                store.y = component.y;
                 D.Moving.save();
             }
         }
