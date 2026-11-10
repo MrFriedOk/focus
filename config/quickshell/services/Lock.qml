@@ -12,4 +12,12 @@ Scope {
             duration: General.anim.dur
         }
     }
+    WlSessionLock {
+        id: lock
+        locked: false
+        WlSessionLockSurface {
+            color: "transparent"
+            W.LockScreen {}
+        }
+    }
 }

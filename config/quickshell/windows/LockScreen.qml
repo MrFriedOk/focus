@@ -4,22 +4,18 @@ import QtQuick
 import qs.data as D
 import Quickshell.Services.Pam
 
-WlSessionLockSurface {
-    color: "transparent"
-    property bool locked: false
-    Rectangle {
-        anchors {
-            top: parent.top
-            right: parent.right
-        }
-        width: 100
-        height: 100
+Rectangle {
+    anchors {
+        top: parent.top
+        right: parent.right
+    }
+    width: 100
+    height: 100
 
-        MouseArea {
-            anchors {
-                fill: parent
-            }
-            onClicked: root.locked = false
+    MouseArea {
+        anchors {
+            fill: parent
         }
+        onClicked: root.locked = false
     }
 }
