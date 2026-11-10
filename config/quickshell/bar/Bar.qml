@@ -8,7 +8,7 @@ Scope {
     readonly property int gap: D.General.gap
     PanelWindow {
         //fake bar
-        width: exclusiveZone
+        implicitWidth: exclusiveZone
         color: "transparent"
         mask: Region {}
         exclusiveZone: root.size
@@ -37,13 +37,14 @@ Scope {
         }
 
         Rectangle {
+            //the rendered bar
             id: bar
             width: root.size
             anchors {
                 left: parent.left
                 top: parent.top
                 bottom: parent.bottom
-                topMargin: root.gap
+                margins: root.gap
             }
         }
 

@@ -13,4 +13,9 @@ Singleton {
     readonly property QtObject bar: QtObject {
         readonly property int size: 20
     }
+    readonly property QtObject font: QtObject {
+        readonly property string family: "NMS GeoSans"
+        readonly property int widPS: 10
+        readonly property bool bold: false
+    }
 }
