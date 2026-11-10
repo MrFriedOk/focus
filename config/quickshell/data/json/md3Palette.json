@@ -1,0 +1,99 @@
+{
+  "shades": {
+    "50": {
+      "hex": "#f2f1f4",
+      "rgb": "rgb(242, 241, 244)",
+      "hsl": "hsl(262, 10%, 95%)"
+    },
+    "100": {
+      "hex": "#e4e2e9",
+      "rgb": "rgb(228, 226, 233)",
+      "hsl": "hsl(262, 16%, 90%)"
+    },
+    "200": {
+      "hex": "#c8bfd9",
+      "rgb": "rgb(200, 191, 217)",
+      "hsl": "hsl(262, 26%, 80%)"
+    },
+    "300": {
+      "hex": "#ab97ce",
+      "rgb": "rgb(171, 151, 206)",
+      "hsl": "hsl(262, 36%, 70%)"
+    },
+    "400": {
+      "hex": "#8c6cc6",
+      "rgb": "rgb(140, 108, 198)",
+      "hsl": "hsl(262, 44%, 60%)"
+    },
+    "500": {
+      "hex": "#673ab7",
+      "rgb": "rgb(103, 58, 183)",
+      "hsl": "hsl(262, 52%, 47%)"
+    },
+    "600": {
+      "hex": "#5d31a5",
+      "rgb": "rgb(93, 49, 165)",
+      "hsl": "hsl(263, 54%, 42%)"
+    },
+    "700": {
+      "hex": "#4e268c",
+      "rgb": "rgb(78, 38, 140)",
+      "hsl": "hsl(264, 57%, 35%)"
+    },
+    "800": {
+      "hex": "#401f70",
+      "rgb": "rgb(64, 31, 112)",
+      "hsl": "hsl(265, 57%, 28%)"
+    },
+    "900": {
+      "hex": "#2a1547",
+      "rgb": "rgb(42, 21, 71)",
+      "hsl": "hsl(266, 54%, 18%)"
+    },
+    "A100": {
+      "hex": "#c8b0f2",
+      "rgb": "rgb(200, 176, 242)",
+      "hsl": "hsl(262, 73%, 82%)"
+    },
+    "A200": {
+      "hex": "#9260eb",
+      "rgb": "rgb(146, 96, 235)",
+      "hsl": "hsl(262, 78%, 65%)"
+    },
+    "A400": {
+      "hex": "#6216e9",
+      "rgb": "rgb(98, 22, 233)",
+      "hsl": "hsl(262, 83%, 50%)"
+    },
+    "A700": {
+      "hex": "#5017b5",
+      "rgb": "rgb(80, 23, 181)",
+      "hsl": "hsl(262, 78%, 40%)"
+    }
+  },
+  "md3": {
+    "primary": "#673ab7",
+    "onPrimary": "#ffffff",
+    "primaryContainer": "#e4e2e9",
+    "onPrimaryContainer": "#2a1547",
+    "secondary": "#8ab73a",
+    "onSecondary": "#000000",
+    "secondaryContainer": "#d8e9ba",
+    "onSecondaryContainer": "#242f0f",
+    "tertiary": "#b7673a",
+    "onTertiary": "#ffffff",
+    "tertiaryContainer": "#e9cbba",
+    "onTertiaryContainer": "#2f1b0f",
+    "error": "#B00020",
+    "onError": "#FFFFFF",
+    "errorContainer": "#FDECEA",
+    "onErrorContainer": "#5F0016",
+    "surface": "#FFFBFE",
+    "onSurface": "#1C1B1F",
+    "surfaceVariant": "#E7E0EC",
+    "onSurfaceVariant": "#49454F",
+    "outline": "#79747E"
+  },
+  "secondary": "#8ab73a",
+  "tertiary": "#b7673a"
+}
