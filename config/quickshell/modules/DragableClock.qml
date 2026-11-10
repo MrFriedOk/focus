@@ -1,15 +1,8 @@
 import Quickshell
 import QtQuick
-import qs.data as D
+import qs.common as C
 
-Item {
-    x: D.Moving.clock.x
-    y: D.Moving.clock.y
+C.Dragable {
     width: 100
     height: 100
-    Rectangle {
-        anchors {
-            fill: parent
-        }
-    }
 }
