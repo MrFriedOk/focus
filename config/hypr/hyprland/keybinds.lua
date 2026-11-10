@@ -5,7 +5,7 @@ local browser = "firefox"
 --local office
 
 hl.bind("SUPER + A", hl.dsp.exec_cmd(launcher))
-
+hl.bind("SUPER + E", hl.dsp.exec_cmd(fileExp))
 hl.bind("SUPER + T", hl.dsp.exec_cmd(term))
 
 for i = 1, 10 do

@@ -5,7 +5,9 @@ cd "$(dirname "$0")"
 
 config="${XDG_CONFIG_HOME:-$HOME/.config}/"
 share="${XDG_DATA_HOME:-$HOME/.local/share}"
-state="${XDG_STATE_HOME:-$HOME/.local/state}/rice-hash"
+state="${XDG_STATE_HOME:-$HOME/.local/state}/focus"
+
+mkdir -p "$state"
 
 tree_hash() {
 	(cd "$1" && find . -type f ! -name '.qmlls.ini' -print0 | sort -z |
