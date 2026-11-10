@@ -5,8 +5,8 @@ import qs.data as D
 
 C.Dragable {
     id: clock
-    readonly property int mins: D.Time.mins
-    readonly property int hrs: D.Time.hrs
+    readonly property string mins: String(D.Time.mins).padStart(2, "0")
+    readonly property string hrs: String(D.Time.hrs).padStart(2, "0")
     store: D.Moving.clock
     width: col.implicitWidth
     height: col.implicitHeight
