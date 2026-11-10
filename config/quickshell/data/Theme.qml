@@ -4,8 +4,10 @@ import QtQuick
 import Quickshell.Io
 
 Singleton {
+    id: root
     readonly property string path: Quickshell.shellPath("data/json/md3Palette.json")
-    readonly property color surface: JSON.parse(path)
+    //readonly property string json: JSON.parse(path)
+    readonly property color surface: json.md3.surface
     readonly property color surfaceContainer: "#171a30"
     //readonly property color onSurface: "#dfe6ff"
     readonly property color primary: "#7aa2ff"
@@ -14,12 +16,6 @@ Singleton {
 
     FileView {
         id: file
-        path: Quickshell.shellPath("data/json/md3Palette.json")
-
-        blockLoading: true
-
-        JsonAdapter {
-            id: md3
-        }
+        path: root.path
     }
 }

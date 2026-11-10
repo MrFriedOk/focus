@@ -13,7 +13,7 @@ Singleton {
     }
     FileView {
         id: file
-        path: "json/moving.json"
+        path: Quickshell.shellPath("data/json/moving.json")//"json/moving.json"
 
         watchChanges: true
         onFileChanged: reload()
