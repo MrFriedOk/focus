@@ -1,6 +1,8 @@
 import Quickshell.Wayland
+import Quickshell
 import QtQuick
 import qs.data
+import qs.windows as W
 
 Scope {
     //property bool lockB: false
@@ -12,6 +14,7 @@ Scope {
     }
     WlSessionLock {
         id: lock
-        locked: ;
+        locked: true
+        W.LockScreen {}
     }
 }
