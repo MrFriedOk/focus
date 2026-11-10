@@ -2,19 +2,27 @@ import Quickshell
 import QtQuick
 import qs.data as D
 
-Scope {
-    id: root
-    property int width: 0
-    property int height: 0
-    Item {
-        x: D.Moving.clock.x
-        width: root.width
-        height: root.height
-        y: D.Moving.clock.y
-        Rectangle {
-            anchors {
-                fill: parent
-            }
+Item {
+    id: component
+    x: D.Moving.clock.x
+    //defaults, if none specified
+    width: 100
+    height: 100
+    y: D.Moving.clock.y
+    Rectangle {
+        anchors {
+            fill: parent
+        }
+    }
+    DragHandler {
+        id: drag
+        target: component
+
+        yAxis.onActiveValueChanged: change => {
+            Math.floor(D.Moving.clock.y -= change);
+        }
+        xAxis.onActiveValueChanged: change => {
+            Math.floor(D.Moving.clock.x -= change);
         }
     }
 }
