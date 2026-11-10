@@ -12,12 +12,15 @@ C.Dragable {
 
     store: D.Moving.clock //where the Dragable access info
     implicitWidth: 200 //+ (progress * 8) //shape.width
-    implicitHeight: 300 //+ (progress * 8) //shape.height
+    implicitHeight: col.content //+ (progress * 8) //shape.height
 
     Shape {
         id: shape
-        width: parent.width + (clock.progress * 8)
-        height: parent.height + (clock.progress * 8)
+        anchors {
+            centerIn: parent
+        }
+        width: Math.round((parent.width + (clock.progress * 8)) / 2) * 2
+        height: Math.round((parent.height + (clock.progress * 8)) / 2) * 2
 
         //width: col.width + clock.padding + (clock.progress * 100)
         //height: col.implicitHeight + clock.padding
@@ -47,7 +50,7 @@ C.Dragable {
     }
     Column {
         id: col
-        //readonly property int content: hrsTxt.implicitWidth + minsTxt.implicitWidth
+        readonly property int content: hrsTxt.implicitHeight + minsTxt.implicitHeight
         //width: content
         anchors {
             fill: parent
