@@ -6,7 +6,7 @@ import Quickshell.Services.Pam
 
 WlSessionLockSurface {
     color: "transparent"
-    property bool locked: parent.locked
+    property bool locked: false
     Rectangle {
         anchors {
             top: parent.top

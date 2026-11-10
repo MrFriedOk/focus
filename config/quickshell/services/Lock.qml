@@ -1,7 +1,7 @@
 import Quickshell.Wayland
 import Quickshell
 import QtQuick
-import qs.data
+import qs.data as D
 import qs.windows as W
 
 Scope {
@@ -11,10 +11,5 @@ Scope {
         NumberAnimation {
             duration: General.anim.dur
         }
-    }
-    WlSessionLock {
-        id: lock
-        locked: true
-        W.LockScreen {}
     }
 }
