@@ -4,9 +4,13 @@ import Quickshell
 import Quickshell.Io
 
 Singleton {
-    property alias x: clockAdapter.x
-    property alias y: clockAdapter.y
-    property QtObject clock: QtObject {}
+    function save() {
+        file.writeAdapter();
+    }
+    property QtObject clock: QtObject {
+        property alias x: clock.x
+        property alias y: clock.y
+    }
     Timer {
         interval: 250
         running: true
@@ -14,16 +18,18 @@ Singleton {
         onTriggered: console.log(clock.x, clock.y)
     }
     FileView {
+        id: file
         path: "json/moving.json"
 
         watchChanges: true
         onFileChanged: reload()
-        onAdapterUpdated: writeAdapter()
+        //onAdapterUpdated: writeAdapter()
 
         JsonAdapter {
-            id: clockAdapter
+            id: adapter
 
             property JsonObject clock: JsonObject {
+                id: clock
                 property int x: 500
                 property int y: 500
             }

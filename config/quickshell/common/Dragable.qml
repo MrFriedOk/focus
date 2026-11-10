@@ -18,11 +18,18 @@ Item {
         id: drag
         target: component
 
-        yAxis.onActiveValueChanged: change => {
-            Math.floor(D.Moving.clock.y -= change);
-        }
-        xAxis.onActiveValueChanged: change => {
-            Math.floor(D.Moving.clock.x -= change);
+        //yAxis.onActiveValueChanged: change => {
+        //Math.floor(D.Moving.clock.y -= change);
+        //}
+        //xAxis.onActiveValueChanged: change => {
+        //    Math.floor(D.Moving.clock.x -= change);
+        //}
+        onActiveChanged: {
+            if (!active) {
+                D.Moving.clock.x = component.x;
+                D.Moving.clock.y = component.y;
+                D.Moving.save();
+            }
         }
     }
 }
