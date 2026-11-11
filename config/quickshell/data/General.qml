@@ -11,7 +11,7 @@ Singleton {
         readonly property real damping: .25
     }
     readonly property QtObject bar: QtObject {
-        readonly property int size: 30
+        readonly property int size: 25
         readonly property int gap: 3 //gap from bar to window edge
         readonly property int float: 0 //margins of the bar
     }

@@ -32,8 +32,8 @@ Shape {
     ShapePath {
         fillColor: D.Theme.primaryOn
         strokeWidth: -1
-        startX: 0
-        startY: 0
+        startX: bar.thin
+        startY: bar.extrudeStart
         PathLine {
             //start
             x: bar.thin
@@ -93,11 +93,6 @@ Shape {
 
         PathLine {
             x: bar.thin
-            y: bar.tall
-        }
-        PathLine {
-            //ensure the path is finished!
-            x: 0
             y: bar.tall
         }
     }
