@@ -37,15 +37,19 @@ PanelWindow {
         property real full: hover.hovered ? root.size : thin
         Behavior on full {
             NumberAnimation {
-                duration: D.General.anim.dur
+                duration: D.General.anim.durShort
             }
         }
         property real fillet: root.radius
         property real corner: fillet
         property real tall: root.height
 
-        property real size: 300
-
+        property real size: hover.hovered ? 300 : 250 // when the extrude thing starts and stops
+        Behavior on size {
+            NumberAnimation {
+                duration: D.General.anim.durShort
+            }
+        }
         property real extrudeStart: ((tall) / 2 - size)
         property real extrudeEnd: ((tall) / 2 + size)
 
