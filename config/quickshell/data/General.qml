@@ -3,7 +3,7 @@ import QtQuick
 import Quickshell
 
 Singleton {
-    readonly property int radius: 0
+    readonly property int radius: 5
     readonly property QtObject anim: QtObject {
         readonly property int dur: 120
         readonly property int durShort: 80
