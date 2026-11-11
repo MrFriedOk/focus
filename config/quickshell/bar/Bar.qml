@@ -56,6 +56,9 @@ Scope {
             property real corner: 12
             property real tall: master.height
 
+            property real extrudeStart: 800
+            property real extrudeEnd: 400
+
             readonly property real cy: width / 2
             readonly property real yb: cy - tall / 2
             readonly property real yc: cy + tall / 2
@@ -77,6 +80,7 @@ Scope {
                     x: bar.thin
                     y: 0
                 }
+                PathLine {}
                 PathLine {
                     //center
                     x: bar.full
