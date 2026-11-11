@@ -56,7 +56,7 @@ C.Dragable {
         anchors {
             fill: parent
         }
-        Text {
+        C.Text {
             id: hrsTxt
             anchors {
                 left: parent.left
@@ -73,7 +73,7 @@ C.Dragable {
             }
             color: col.color
         }
-        Text {
+        C.Text {
             id: minsTxt
             anchors {
                 left: parent.left

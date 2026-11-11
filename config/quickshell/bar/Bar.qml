@@ -51,13 +51,8 @@ PanelWindow {
         property real extrudeEnd: ((tall) / 2 + size)
 
         property real w: full - thin
-        Behavior on w {
-            NumberAnimation {
-                duration: D.General.anim.durLong
-                easing.bezierCurve: [0.5, 0.0, 0.0, 1.0, 1, 1]
-            }
-        }
-        readonly property real f: 11 //Math.max(0, Math.min(fillet, w / 2))
+
+        readonly property real f: Math.max(0, Math.min(fillet, w / 2))
         readonly property real c: Math.max(0, Math.min(corner, w / 2, (extrudeEnd - extrudeStart) / 2))
 
         preferredRendererType: Shape.CurveRenderer
