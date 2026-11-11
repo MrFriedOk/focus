@@ -73,10 +73,6 @@ Scope {
                 startX: 0
                 startY: 0
                 PathLine {
-                    x: 0
-                    y: 0
-                }
-                PathLine {
                     //start
                     x: bar.thin
                     y: 0
@@ -100,16 +96,12 @@ Scope {
                     x: bar.thin
                     y: bar.extrudeEnd
                 }
-                //PathLine {
-                //center
-                //    x: bar.full
-                //    y: bar.yc
-                //}
                 PathLine {
                     x: bar.thin
                     y: bar.tall
                 }
                 PathLine {
+                    //ensure the path is finished!
                     x: 0
                     y: bar.tall
                 }
