@@ -6,8 +6,8 @@ import Quickshell.Io
 Singleton {
     id: root
     readonly property string path: Quickshell.shellPath("data/json/md3Palette.json")
-    //readonly property string json: JSON.parse(path)
-    readonly property color surface: json.md3.surface
+    property var json: null
+    readonly property color surface: "#ffffff"
     readonly property color surfaceContainer: "#171a30"
     //readonly property color onSurface: "#dfe6ff"
     readonly property color primary: "#7aa2ff"
@@ -17,5 +17,15 @@ Singleton {
     FileView {
         id: file
         path: root.path
+        blockLoading: true //run at startup
+
+        onLoaded: {
+            try {
+                //file.data = JSON.parse(file.text());
+                root.json = file.data();
+            } catch (err) {
+                console.warn("couldn't parse", path, err);
+            }
+        }
     }
 }
