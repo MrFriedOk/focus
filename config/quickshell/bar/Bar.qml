@@ -50,7 +50,7 @@ Scope {
             //the rendered bar
             id: bar
             //width: root.size
-            property real thin: 5
+            property real thin: 3
             property real full: root.size
             property real fillet: root.radius
             property real corner: 12
@@ -60,10 +60,6 @@ Scope {
 
             property real extrudeStart: ((tall) / 2 - size)
             property real extrudeEnd: ((tall) / 2 + size)
-
-            readonly property real cy: width / 2
-            readonly property real yb: cy - tall / 2
-            readonly property real yc: cy + tall / 2
 
             preferredRendererType: Shape.CurveRenderer
 
@@ -76,13 +72,17 @@ Scope {
                 strokeWidth: -1
                 startX: 0
                 startY: 0
-
+                PathLine {
+                    x: 0
+                    y: 0
+                }
                 PathLine {
                     //start
                     x: bar.thin
                     y: 0
                 }
                 PathLine {
+                    //top extrude
                     x: bar.thin
                     y: bar.extrudeStart
                 }
@@ -91,10 +91,12 @@ Scope {
                     y: bar.extrudeStart
                 }
                 PathLine {
+                    //bottom extrude end
                     x: bar.full
                     y: bar.extrudeEnd
                 }
                 PathLine {
+                    //bottom extrude start
                     x: bar.thin
                     y: bar.extrudeEnd
                 }
@@ -105,6 +107,10 @@ Scope {
                 //}
                 PathLine {
                     x: bar.thin
+                    y: bar.tall
+                }
+                PathLine {
+                    x: 0
                     y: bar.tall
                 }
             }
