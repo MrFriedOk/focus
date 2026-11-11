@@ -5,8 +5,12 @@ Text {
     id: root
     color: D.Theme.surfaceOn
 
+    property bool animate: true
+
     Behavior on text {
+        enabled: root.animate
         SequentialAnimation {
+
             NumberAnimation {
                 target: root
                 property: "opacity"
@@ -24,6 +28,7 @@ Text {
     }
 
     Behavior on color {
+        enabled: root.animate
         ColorAnimation {
             duration: D.General.anim.dur
         }
