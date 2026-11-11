@@ -27,7 +27,7 @@ C.Dragable {
         ShapePath {
             id: path
             strokeWidth: -1
-            fillColor: D.Theme.surface
+            fillColor: D.Theme.surfaceVar
             startX: 0
             startY: 0
             PathLine {

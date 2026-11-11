@@ -5,27 +5,19 @@ import Quickshell.Io
 
 Singleton {
     id: root
+    property bool dark: true
     readonly property string path: Quickshell.shellPath("data/json/md3Palette.json")
-    property var json: null
-    readonly property color surface: "#ffffff"
-    readonly property color surfaceContainer: "#171a30"
-    //readonly property color onSurface: "#dfe6ff"
-    readonly property color primary: "#7aa2ff"
-    //readonly property color onPrimary: "#0e1020"
-    readonly property color outline: "#4a5080"
+    readonly property color surface: dark ? "#1C1B1F" : "#FFFBFE"
+    readonly property color outline: "#938F99"
+    readonly property color primary: "#252525"
+    readonly property color secondary: "#252525"
+    readonly property color tertiary: "#252525"
+    readonly property color surfaceVar: dark ? "#49454F" : "#E7E0EC"
+    readonly property color error: "#B00020"
 
-    FileView {
-        id: file
-        path: root.path
-        blockLoading: true //run at startup
-
-        onLoaded: {
-            try {
-                //file.data = JSON.parse(file.text());
-                root.json = file.data();
-            } catch (err) {
-                console.warn("couldn't parse", path, err);
-            }
-        }
-    }
+    readonly property color surfaceVarOn: dark ? "#CAC4D0" : "#49454F"
+    readonly property color secondaryOn: "#FFFFFF"
+    readonly property color tertiaryOn: "#FFFFFF"
+    readonly property color surfaceOn: dark ? "#E6E1E5" : "#1C1B1F"
+    readonly property color primaryOn: "#FFFFFF"
 }
