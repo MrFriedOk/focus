@@ -53,7 +53,7 @@ Scope {
             property real thin: 5
             property real full: root.size
             property real fillet: root.radius
-            property real corner: 12
+            property real corner: fillet
             property real tall: master.height
 
             property real size: 300
@@ -84,23 +84,38 @@ Scope {
                 PathLine {
                     //top extrude
                     x: bar.thin
-                    y: bar.extrudeStart - bar.f
+                    y: bar.extrudeStart - bar.f //always make sure to subtract fillet value, otherwise you get that stupid dent
                 }
                 PathArc {
-                    x: bar.thin + bar.f
+                    //top fillet
+                    x: bar.thin + bar.f //and be sure to add the same value, otherwise you get the same dent! if these are not used, you get nothing :c
                     y: bar.extrudeStart
                     radiusX: bar.f
                     radiusY: bar.f
                     direction: PathArc.Counterclockwise
                 }
                 PathLine {
-                    x: bar.full
+                    x: bar.full - bar.c
                     y: bar.extrudeStart
+                }
+                PathArc {
+                    //top corner
+                    x: bar.full
+                    y: bar.extrudeStart + bar.c
+                    radiusX: bar.c
+                    radiusY: bar.c
+                    direction: PathArc.Clockwise //counter inverts it! also the default btw
                 }
                 PathLine {
                     //bottom extrude end
                     x: bar.full
+                    y: bar.extrudeEnd - bar.c
+                }
+                PathArc {
+                    x: bar.full - bar.c
                     y: bar.extrudeEnd
+                    radiusX: bar.c
+                    radiusY: bar.c
                 }
                 PathLine {
                     //bottom extrude start
