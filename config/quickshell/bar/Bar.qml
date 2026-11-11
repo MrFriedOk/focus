@@ -26,6 +26,7 @@ Scope {
     }
 
     PanelWindow {
+        id: master
         //the 'master' window
         color: "transparent"
         exclusionMode: ExclusionMode.Ignore
@@ -49,11 +50,11 @@ Scope {
             //the rendered bar
             id: bar
             //width: root.size
-            property real thin: 1
+            property real thin: 5
             property real full: root.size
             property real fillet: root.radius
             property real corner: 12
-            property real tall: 500
+            property real tall: master.height
 
             readonly property real cy: width / 2
             readonly property real yb: cy - tall / 2
@@ -77,16 +78,9 @@ Scope {
                     y: 0
                 }
                 PathLine {
-                    x: bar.thin
-                    y: bar.yb - bar.fillet
-                }
-                PathArc {
-                    x: bar.thin + bar.fillet
-                    y: bar.yb
-                }
-                PathLine {
-                    x: 0
-                    y: bar.tall
+                    //center
+                    x: bar.full
+                    y: bar.yc
                 }
                 PathLine {
                     x: bar.thin
