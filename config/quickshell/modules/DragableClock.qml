@@ -51,6 +51,7 @@ C.Dragable {
     Column {
         id: col
         readonly property int content: hrsTxt.implicitHeight + minsTxt.implicitHeight
+        readonly property color color: D.Theme.surfaceVarOn
         //width: content
         anchors {
             fill: parent
@@ -70,7 +71,7 @@ C.Dragable {
                 pointSize: 96
                 bold: true
             }
-            color: D.Theme.primary
+            color: col.color
         }
         Text {
             id: minsTxt
@@ -88,7 +89,7 @@ C.Dragable {
                 pointSize: 96
                 bold: true
             }
-            color: D.Theme.primary
+            color: col.color
         }
         anchors {
             fill: parent

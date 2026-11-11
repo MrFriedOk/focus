@@ -49,28 +49,24 @@ Scope {
             //the rendered bar
             id: bar
             //width: root.size
-            property real thin: 2
+            property real thin: 1
             property real full: root.size
             property real fillet: root.radius
             property real corner: 12
             property real tall: 500
 
+            readonly property real cy: width / 2
+            readonly property real yb: cy - tall / 2
+            readonly property real yc: cy + tall / 2
+
             preferredRendererType: Shape.CurveRenderer
-            //anchors {
-            //    left: parent.left
-            //    top: parent.top
-            //    bottom: parent.bottom
-            //    margins: root.float
-            //}
-            //radius: root.radius
-            //color: D.Theme.bg
 
             P.Clock {
                 id: clockPanel
             }
 
             ShapePath {
-                fillColor: D.Theme.surface
+                fillColor: D.Theme.primaryOn
                 strokeWidth: -1
                 startX: 0
                 startY: 0
@@ -80,7 +76,18 @@ Scope {
                     x: bar.thin
                     y: 0
                 }
-
+                PathLine {
+                    x: bar.thin
+                    y: bar.yb - bar.fillet
+                }
+                PathArc {
+                    x: bar.thin + bar.fillet
+                    y: bar.yb
+                }
+                PathLine {
+                    x: 0
+                    y: bar.tall
+                }
                 PathLine {
                     x: bar.thin
                     y: bar.tall

@@ -7,6 +7,7 @@ import "services" as S
 
 ShellRoot {
     S.Lock {}
+    S.Notifications {}
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
         model: Quickshell.screens
@@ -19,6 +20,4 @@ ShellRoot {
         //visible: false
         WlrLayershell.layer: WlrLayer.Top
     }
-
-    S.Notifications {}
 }
