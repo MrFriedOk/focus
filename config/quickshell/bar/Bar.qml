@@ -112,16 +112,27 @@ Scope {
                     y: bar.extrudeEnd - bar.c
                 }
                 PathArc {
+                    //botom corner
                     x: bar.full - bar.c
                     y: bar.extrudeEnd
                     radiusX: bar.c
                     radiusY: bar.c
                 }
+
                 PathLine {
                     //bottom extrude start
-                    x: bar.thin
+                    x: bar.thin + bar.f
                     y: bar.extrudeEnd
                 }
+                PathArc {
+                    //bottom fillet, yes, order of path lines matters!
+                    x: bar.thin
+                    y: bar.extrudeEnd + bar.f
+                    radiusX: bar.f
+                    radiusY: bar.f
+                    direction: PathArc.Counterclockwise
+                }
+
                 PathLine {
                     x: bar.thin
                     y: bar.tall
