@@ -37,8 +37,8 @@ PanelWindow {
         property real full: hover.hovered ? root.size : thin
         Behavior on full {
             NumberAnimation {
-                duration: D.General.anim.dur + 800
-                easing.bezierCurve: [0.0, 0.9, 0.1, 1.05, 1, 1]
+                duration: D.General.anim.durLong
+                easing.bezierCurve: [0.5, 0.0, 0.0, 1.0, 1, 1]
             }
         }
         property real fillet: root.radius
@@ -50,8 +50,14 @@ PanelWindow {
         property real extrudeStart: ((tall) / 2 - size)
         property real extrudeEnd: ((tall) / 2 + size)
 
-        readonly property real w: full - thin
-        readonly property real f: Math.max(0, Math.min(fillet, w / 2))
+        property real w: full - thin
+        Behavior on w {
+            NumberAnimation {
+                duration: D.General.anim.durLong
+                easing.bezierCurve: [0.5, 0.0, 0.0, 1.0, 1, 1]
+            }
+        }
+        readonly property real f: 11 //Math.max(0, Math.min(fillet, w / 2))
         readonly property real c: Math.max(0, Math.min(corner, w / 2, (extrudeEnd - extrudeStart) / 2))
 
         preferredRendererType: Shape.CurveRenderer

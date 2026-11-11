@@ -3,7 +3,7 @@ import QtQuick
 import Quickshell
 
 Singleton {
-    readonly property int radius: 5
+    readonly property int radius: 20
     readonly property QtObject anim: QtObject {
         readonly property int dur: 120
         readonly property int durShort: 80
@@ -11,7 +11,7 @@ Singleton {
         readonly property real damping: .25
     }
     readonly property QtObject bar: QtObject {
-        readonly property int size: 20
+        readonly property int size: 30
         readonly property int gap: 3 //gap from bar to window edge
         readonly property int float: 0 //margins of the bar
     }
