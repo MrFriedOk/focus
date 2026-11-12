@@ -3,7 +3,7 @@ import QtQuick
 import QtQuick.Shapes
 import qs.data as D
 import "panels" as P
-import "."
+import "." as F
 
 Scope {
     id: rootTwo //lol i'm so sorry
@@ -92,7 +92,7 @@ Scope {
             id: hover
         }
 
-        Shape {}
+        F.Shape {}
 
         SidePanel {
             id: sideBar
