@@ -87,7 +87,7 @@ Scope {
             id: hover
 					}
 
-
+Frame{}
 
         SidePanel {
             id: sideBar
