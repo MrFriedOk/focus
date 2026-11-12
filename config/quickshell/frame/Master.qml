@@ -18,7 +18,6 @@ PanelWindow {
         bottom: true
         right: true
     }
-
     mask: Region {
         Region {
             item: bar
