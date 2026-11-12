@@ -5,6 +5,8 @@ import qs.data as D
 Scope {
     id: root
 
+    property var screen: null
+
     property int gap: D.General.bar.gap + 1
     property int barHeight: D.General.bar.size
     property color barCol: D.Theme.surface
@@ -16,7 +18,7 @@ Scope {
             left: true
             right: true
         }
-        implicitHeight: rootTwo.gap + rootTwo.barHeight
+        implicitHeight: root.gap + root.barHeight
         color: "transparent"
 
         mask: Region {}
@@ -24,7 +26,7 @@ Scope {
     PanelWindow {
         id: rightSide
         color: "transparent"
-        implicitWidth: rootTwo.gap
+        implicitWidth: root.gap
 
         anchors {
             top: true
@@ -41,7 +43,7 @@ Scope {
             bottom: true
             top: true
         }
-        implicitWidth: rootTwo.gap
+        implicitWidth: root.gap
 
         color: "transparent"
 
@@ -57,8 +59,22 @@ Scope {
         }
         color: "transparent"
 
-        implicitHeight: rootTwo.gap
+        implicitHeight: root.gap
 
         mask: Region {}
+    }
+
+    PanelWindow {
+        anchors {
+            top: true
+            bottom: true
+            left: true
+            right: true
+        }
+        exclusionMode: ExclusionMode.Ignore
+        mask: Region {}
+        color: "transparent"
+
+        Shape {}
     }
 }
