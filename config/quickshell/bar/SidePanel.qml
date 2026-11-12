@@ -6,7 +6,7 @@ Shape {
     //the rendered bar
     id: bar
 
-    property real thin: 5
+    property real thin: D.General.bar.gap - 2
     property real full: hover.hovered ? root.size : thin
     Behavior on full {
         NumberAnimation {
@@ -30,7 +30,7 @@ Shape {
 
     preferredRendererType: Shape.CurveRenderer
     ShapePath {
-        fillColor: D.Theme.primaryOn
+        fillColor: D.Theme.surfaceVar
         strokeWidth: -1
         startX: bar.thin
         startY: bar.extrudeStart
