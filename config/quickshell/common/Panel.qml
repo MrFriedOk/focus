@@ -7,6 +7,17 @@ import QtQml
 Shape {
     id: root
 
+    enum Side {
+        Top,
+        Bottom,
+        Left,
+        Right
+    }
+
+    property int side: Panel.Left
+
+    property bool vertical: Panel.Right || Panel.Left
+
     property real size: 100
 
     property real corner: D.General.radius
