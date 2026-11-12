@@ -6,7 +6,8 @@ Shape {
     //the rendered bar
     id: bar
 
-    property real thin: D.General.bar.gap - 2
+    property int sink: D.General.bar.sink
+    property real thin: D.General.bar.gap //!(D.General.bar.gap - sink <= 0) ? D.General.bar.gap - sink : D.General.bar.gap
     property real full: hover.hovered ? root.size : thin
     Behavior on full {
         NumberAnimation {

@@ -7,7 +7,7 @@ import "."
 
 Scope {
     id: rootTwo //lol i'm so sorry
-    property int gap: D.General.bar.gap
+    property int gap: D.General.bar.gap + 1
     property int barHeight: D.General.bar.size
     property color barCol: D.Theme.surface
     PanelWindow {
