@@ -7,18 +7,15 @@ Singleton {
     id: root
     property var bars: []
 
-    readonly property string config: Quickshell.shellPath("data/config/cava.conf")
+    readonly property var config: Quickshell.shellPath("data/config/cava.conf")
     Process {
         running: true
-        command: {
-            ["cava", "-p", root.config];
-            console.log(root.config);
-        }
+        command: ["cava", "-p", root.config]
 
         stdout: SplitParser {
             onRead: d => {
                 return root.bars = d.split(";").filter(s => {
-                    s !== "";
+                    return s !== "";
                 }).map(Number);
             }
         }

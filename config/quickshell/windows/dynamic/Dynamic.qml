@@ -7,6 +7,13 @@ Item {
     id: root
     readonly property var bars: D.Cava.bars
 
+    Timer {
+        interval: 1000
+        onTriggered: console.log(root.bars)
+        running: true
+        repeat: true
+    }
+
     anchors {
         fill: parent
     }
@@ -21,7 +28,7 @@ Item {
 
             delegate: Rectangle {
                 required property var modelData
-                width: 100 / (root.bars.length)
+                width: 1000 / (root.bars.length)
                 height: 1000
             }
         }
