@@ -10,6 +10,7 @@ Scope {
     property int gap: D.General.bar.gap + 1
     property int barHeight: D.General.bar.size
     property color barCol: D.Theme.surface
+    //property var screen: null
     PanelWindow {
         id: fakeBar
         anchors {
@@ -64,8 +65,10 @@ Scope {
     }
     PanelWindow {
         id: root
+        //screen: Quickshell.ShellScreen
+
         //readonly property int size: 500//D.General.bar.size + gap
-        readonly property int radius: D.General.radius
+        //readonly property int radius: D.General.radius
         //readonly property list<string> panels: [""]
         //the 'master' window
         color: "transparent"

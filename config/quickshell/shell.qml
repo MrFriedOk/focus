@@ -8,13 +8,8 @@ import "services" as S
 ShellRoot {
     S.Lock {}
     S.Notifications {}
-    Variants {
-        model: Quickshell.screens
-        F.Master {
-            required property var modelData
-            screen: modelData
-        }
-    }
+
+    F.Master {}
 
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
