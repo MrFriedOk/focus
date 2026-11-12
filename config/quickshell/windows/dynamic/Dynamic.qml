@@ -9,7 +9,7 @@ Item {
 
     Timer {
         interval: 1000
-        onTriggered: console.log(root.bars)
+        onTriggered: console.log(D.Cava.bars)
         running: true
         repeat: true
     }
