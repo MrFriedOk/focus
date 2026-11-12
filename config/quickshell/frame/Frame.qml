@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Shapes
 import qs.data as D
 import "panels" as P
+import qs.common as C
 import "." as F
 
 Scope {
@@ -94,7 +95,7 @@ Scope {
 
         F.Shape {}
 
-        SidePanel {
+        C.SidePanel {
             id: sideBar
             size: 200
         }
