@@ -95,7 +95,7 @@ Scope {
 
         F.Shape {}
 
-        C.SidePanel {
+        C.Panel {
             id: sideBar
             size: 200
         }
