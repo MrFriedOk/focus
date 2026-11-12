@@ -15,7 +15,6 @@ ShellRoot {
         delegate: W.Dummy {}
     }
 
-    //F.Master {}
-
-    //W.Background {} //bg only for shellscreen
+    F.Master {}
+    W.Background {} //bg only for shellscreen
 }

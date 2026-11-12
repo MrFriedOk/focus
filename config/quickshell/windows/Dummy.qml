@@ -9,7 +9,6 @@ Scope {
     property int gap: D.General.bar.gap + 1
     property int barHeight: D.General.bar.size
     property color barCol: D.Theme.surface
-    property var screen: null
     PanelWindow {
         //wallpaper/bg
         anchors {

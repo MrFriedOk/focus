@@ -6,25 +6,35 @@ import "."
 import "bar" as B
 import qs.modules as M
 
-PanelWindow {
-    id: root
-
-    //the 'master' window
-    color: "transparent"
-    exclusionMode: ExclusionMode.Ignore
-    anchors {
-        left: true
-        top: true
-        bottom: true
-        right: true
-    }
-    mask: Region {
-        Region {
-            item: bar
+Scope {
+    PanelWindow {
+        //fake bar
+        anchors {
+            top: true
+            left: true
+            right: true
         }
-    } //stop the window from blocking input
+        color: "transparent"
+        implicitHeight: D.General.bar.size - D.General.bar.gap
+    }
+    PanelWindow {
+        id: root
 
-    B.Bar {
-        id: bar
+        //the 'master' window
+        color: "transparent"
+        exclusionMode: ExclusionMode.Ignore
+        anchors {
+            left: true
+            top: true
+            bottom: true
+            right: true
+        }
+        mask: Region {
+            Region {}
+        } //stop the window from blocking input
+
+        B.Bar {
+            id: bar
+        }
     }
 }

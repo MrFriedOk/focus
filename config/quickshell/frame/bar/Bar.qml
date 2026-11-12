@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Shapes
 import qs.data as D
+import "."
 
 Item {
     anchors {
@@ -10,7 +11,6 @@ Item {
         left: parent.left
     }
     height: D.General.bar.size
-    Rectangle {
-        anchors.fill: parent
-    }
+
+    BarShape {}
 }
