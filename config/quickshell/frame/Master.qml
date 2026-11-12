@@ -86,8 +86,6 @@ Scope {
             }
         } //stop the window from blocking input
 
-        Shape {}
-
         B.Bar {
             id: bar
         }

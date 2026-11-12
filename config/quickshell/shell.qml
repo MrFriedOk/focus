@@ -11,10 +11,12 @@ ShellRoot {
 
     F.Master {}
 
+    W.Background {}
+
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
         model: Quickshell.screens
-        delegate: W.Background {
+        delegate: F.Frame {
             required property var modelData
             screen: modelData
         }
