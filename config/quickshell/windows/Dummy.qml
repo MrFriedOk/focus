@@ -1,16 +1,27 @@
 import Quickshell
 import QtQuick
 import qs.data as D
+import Quickshell.Wayland
 
 Scope {
     id: root
-
-    property var screen: null
 
     property int gap: D.General.bar.gap + 1
     property int barHeight: D.General.bar.size
     property color barCol: D.Theme.surface
     //property var screen: null
+    PanelWindow {
+        //wallpaper/bg
+        anchors {
+            top: true
+            bottom: true
+            left: true
+            right: true
+        }
+        exclusionMode: ExclusionMode.Ignore
+        color: "transparent"
+        WlrLayershell.layer: WlrLayer.Background
+    }
     PanelWindow {
         id: fakeBar
         anchors {

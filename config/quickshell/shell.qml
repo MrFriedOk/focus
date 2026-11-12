@@ -9,16 +9,13 @@ ShellRoot {
     S.Lock {}
     S.Notifications {}
 
-    F.Master {}
-
-    //W.Background {}
-
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
         model: Quickshell.screens
-        delegate: W.Dummy {
-            required property var modelData
-            screen: modelData
-        }
+        delegate: W.Dummy {}
     }
+
+    F.Master {}
+
+    W.Background {}
 }
