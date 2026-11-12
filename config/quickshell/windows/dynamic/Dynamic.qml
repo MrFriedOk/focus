@@ -6,8 +6,14 @@ import Quickshell.Io
 Item {
     id: root
     property var bars: D.Cava.bars
-    //property list<string> bars: []
-    readonly property string config: Quickshell.shellPath("data/config/cava.conf")
+
+    Timer {
+        //debug
+        onTriggered: console.log(root.bars)
+        interval: 1000
+        repeat: true
+        running: false
+    }
     anchors {
         fill: parent
     }
@@ -21,9 +27,10 @@ Item {
             model: root.bars
 
             delegate: Rectangle {
+                color: D.Theme.primary
                 required property var modelData
                 width: 1000 / (root.bars.length)
-                height: 1000
+                height: 5
             }
         }
     }
