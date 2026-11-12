@@ -29,7 +29,7 @@ Scope {
             left: true
             right: true
         }
-        implicitHeight: root.gap + root.barHeight
+        implicitHeight: root.gap
         color: "transparent"
 
         mask: Region {}
@@ -76,6 +76,7 @@ Scope {
     }
 
     PanelWindow {
+        //frame
         anchors {
             top: true
             bottom: true

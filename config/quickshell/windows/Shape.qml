@@ -40,10 +40,17 @@ Shape {
         PathMove {
             x: frame.t + frame.r
             y: frame.t
-        }     //create new subpath, this is the hole
+        }     // new subpath: the hole
         PathLine {
-            x: frame.width - frame.t
+            x: frame.width - frame.t - frame.r
             y: frame.t
+        }
+        PathArc {
+            x: frame.width - frame.t
+            y: frame.t + frame.r
+            radiusX: frame.r
+            radiusY: frame.r
+            direction: PathArc.Clockwise
         }
         PathLine {
             x: frame.width - frame.t
@@ -69,7 +76,14 @@ Shape {
         }
         PathLine {
             x: frame.t
+            y: frame.t + frame.r
+        }
+        PathArc {
+            x: frame.t + frame.r
             y: frame.t
+            radiusX: frame.r
+            radiusY: frame.r
+            direction: PathArc.Clockwise
         }
     }
 }
