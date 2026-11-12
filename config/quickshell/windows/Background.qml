@@ -3,6 +3,7 @@ import QtQuick
 import Quickshell.Wayland
 import qs.data as D
 import qs.modules as M
+import qs.frame as F
 import "dynamic"
 
 PanelWindow {

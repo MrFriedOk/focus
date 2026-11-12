@@ -4,6 +4,7 @@ import qs.data as D
 import "panels" as P
 import "."
 import "bar" as B
+import qs.modules as M
 
 Scope {
     id: rootTwo //lol i'm so sorry
