@@ -5,14 +5,22 @@ import QtQuick
 
 Singleton {
     id: root
+    property var bars: []
+
     readonly property string config: Quickshell.shellPath("data/config/cava.conf")
-    property list<string> bars: []
     Process {
         running: true
-        command: ["cava", "-p", root.config]
+        command: {
+            ["cava", "-p", root.config];
+            console.log(root.config);
+        }
 
         stdout: SplitParser {
-            onRead: d => root.bars = d.split(";").filter(s => s !== "").map(Number)
+            onRead: d => {
+                return root.bars = d.split(";").filter(s => {
+                    s !== "";
+                }).map(Number);
+            }
         }
     }
 }

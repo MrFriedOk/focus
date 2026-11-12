@@ -1,21 +1,20 @@
 import Quickshell
 import QtQuick
 import qs.data as D
+import Quickshell.Io
 
 Item {
     id: root
-    readonly property list<string> bars: D.Cava.bars
+    readonly property var bars: D.Cava.bars
+
     anchors {
         fill: parent
-    }
-    Rectangle {
-        anchors.fill: parent
     }
     Row {
         spacing: 1
         //visualizer
         anchors {
-            fill: parent
+            bottom: parent.bottom
         }
         Repeater {
             model: root.bars
