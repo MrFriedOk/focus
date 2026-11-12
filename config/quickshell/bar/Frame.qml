@@ -1,75 +1,95 @@
+import Quickshell
 import QtQuick
-import QtQuick.Shapes
 import qs.data as D
+import "panels" as P
+import "."
 
-Shape {
-    id: frame
-    anchors {
-        fill: parent
+Scope {
+    id: rootTwo //lol i'm so sorry
+    property int gap: D.General.bar.gap + 1
+    property int barHeight: D.General.bar.size
+    property color barCol: D.Theme.surface
+    PanelWindow {
+        id: bar
+        anchors {
+            top: true
+            left: true
+            right: true
+        }
+        implicitHeight: rootTwo.gap + rootTwo.barHeight
+        color: "transparent"
+
+        mask: Region {}
     }
-    preferredRendererType: Shape.CurveRenderer
+    PanelWindow {
+        id: rightSide
+        color: "transparent"
+        implicitWidth: rootTwo.gap
 
-    property real t: D.General.bar.gap
-    property real r: D.General.radius
-
-    ShapePath {
-        fillColor: D.Theme.surfaceVar
-        strokeWidth: -1
-        fillRule: ShapePath.OddEvenFill
-
-        startX: 0
-        startY: 0
-
-        PathLine {
-            x: frame.width
-            y: 0
-        }
-        PathLine {
-            x: frame.width
-            y: frame.height
-        }
-        PathLine {
-            x: 0
-            y: frame.height
-        }
-        PathLine {
-            x: 0
-            y: 0
+        anchors {
+            top: true
+            bottom: true
+            right: true
         }
 
-        PathMove {
-            x: frame.t + frame.r
-            y: frame.t
-        }     //create new subpath, this is the hole
-        PathLine {
-            x: frame.width - frame.t
-            y: frame.t
+        mask: Region {}
+    }
+    PanelWindow {
+        id: leftSide
+        anchors {
+            left: true
+            bottom: true
+            top: true
         }
-        PathLine {
-            x: frame.width - frame.t
-            y: frame.height - frame.t - frame.r
+        implicitWidth: rootTwo.gap
+
+        color: "transparent"
+
+        mask: Region {}
+    }
+    PanelWindow {
+        id: bottom
+
+        anchors {
+            bottom: true
+            left: true
+            right: true
         }
-        PathArc {
-            x: frame.width - frame.t - frame.r
-            y: frame.height - frame.t
-            radiusX: frame.r
-            radiusY: frame.r
-            direction: PathArc.Clockwise
+        color: "transparent"
+
+        implicitHeight: rootTwo.gap
+
+        mask: Region {}
+    }
+    PanelWindow {
+        id: root
+        readonly property int size: 500//D.General.bar.size + gap
+        readonly property int radius: D.General.radius
+        readonly property list<string> panels: [""]
+        //the 'master' window
+        color: "transparent"
+        exclusionMode: ExclusionMode.Ignore
+        anchors {
+            left: true
+            top: true
+            bottom: true
+            right: true
         }
-        PathLine {
-            x: frame.t + frame.r
-            y: frame.height - frame.t
+
+        mask: Region {
+            Region {
+                item: sideBar
+            }
         }
-        PathArc {
-            x: frame.t
-            y: frame.height - frame.t - frame.r
-            radiusX: frame.r
-            radiusY: frame.r
-            direction: PathArc.Clockwise
+        HoverHandler {
+            id: hover
         }
-        PathLine {
-            x: frame.t
-            y: frame.t
+
+        Shape {}
+
+        SidePanel {
+            id: sideBar
+            size: 200
         }
     }
 }
