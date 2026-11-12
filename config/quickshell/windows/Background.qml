@@ -18,10 +18,7 @@ PanelWindow {
     WlrLayershell.layer: WlrLayer.Background
     exclusionMode: ExclusionMode.Ignore
 
-    Loader {
-        active: true
-        Dynamic {}
-    }
+    Dynamic {}
 
     M.DragableClock {}
 }

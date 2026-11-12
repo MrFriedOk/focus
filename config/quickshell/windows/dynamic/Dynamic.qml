@@ -8,13 +8,23 @@ Item {
     anchors {
         fill: parent
     }
+    Rectangle {
+        anchors.fill: parent
+    }
     Row {
+        spacing: 1
         //visualizer
         anchors {
             fill: parent
         }
         Repeater {
             model: root.bars
+
+            delegate: Rectangle {
+                required property var modelData
+                width: 100 / (root.bars.length)
+                height: 1000
+            }
         }
     }
 }
