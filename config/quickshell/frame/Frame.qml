@@ -7,11 +7,13 @@ import "."
 
 Scope {
     id: rootTwo //lol i'm so sorry
+    property var screen
     property int gap: D.General.bar.gap + 1
     property int barHeight: D.General.bar.size
     property color barCol: D.Theme.surface
     PanelWindow {
         id: bar
+        screen: rootTwo.screen
         anchors {
             top: true
             left: true
@@ -24,6 +26,7 @@ Scope {
     }
     PanelWindow {
         id: rightSide
+        screen: rootTwo.screen
         color: "transparent"
         implicitWidth: rootTwo.gap
 
@@ -31,12 +34,13 @@ Scope {
             top: true
             bottom: true
             right: true
-					}
+        }
 
         mask: Region {}
     }
     PanelWindow {
         id: leftSide
+        screen: rootTwo.screen
         anchors {
             left: true
             bottom: true
@@ -44,13 +48,13 @@ Scope {
         }
         implicitWidth: rootTwo.gap
 
-				color: "transparent"
-
+        color: "transparent"
 
         mask: Region {}
     }
     PanelWindow {
         id: bottom
+        screen: rootTwo.screen
 
         anchors {
             bottom: true
@@ -59,12 +63,13 @@ Scope {
         }
         color: "transparent"
 
-				implicitHeight: rootTwo.gap
+        implicitHeight: rootTwo.gap
 
         mask: Region {}
     }
     PanelWindow {
         id: root
+        screen: rootTwo.screen
         readonly property int size: 500//D.General.bar.size + gap
         readonly property int radius: D.General.radius
         readonly property list<string> panels: [""]
@@ -85,9 +90,9 @@ Scope {
         }
         HoverHandler {
             id: hover
-					}
+        }
 
-				Frame{}
+        Shape {}
 
         SidePanel {
             id: sideBar

@@ -5,34 +5,9 @@ import Quickshell.Io
 
 Item {
     id: root
-    //property list<string> bars: D.Cava.bars
-    property list<string> bars: []
+    property var bars: D.Cava.bars
+    //property list<string> bars: []
     readonly property string config: Quickshell.shellPath("data/config/cava.conf")
-    Process {
-        running: true
-        command: ["cava", "-p", root.config]//root.config]
-
-        stdout: SplitParser {
-            onRead: d => {
-                console.log("cava:", d.slice(0, 60));
-                return root.bars = d.split(";").filter(s => {
-                    return s !== "";
-                }).map(Number);
-            }
-        }
-        stderr: SplitParser {
-            onRead: d => console.log("cava err:", d)
-        }
-        onExited: (code, status) => console.log("cava exited", code, status)
-    }
-
-    Timer {
-        interval: 1000
-        onTriggered: console.log(root.bars)
-        running: true
-        repeat: true
-    }
-
     anchors {
         fill: parent
     }

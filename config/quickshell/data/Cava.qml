@@ -20,9 +20,5 @@ Singleton {
                 }).map(Number);
             }
         }
-        stderr: SplitParser {
-            onRead: d => console.log("cava err:", d)
-        }
-        onExited: (code, status) => console.log("cava exited", code, status)
     }
 }
