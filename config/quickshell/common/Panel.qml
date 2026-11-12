@@ -1,5 +1,5 @@
 import Quickshell
-import qs.data
+import qs.data as D
 import QtQuick
 import QtQuick.Shapes
 import QtQml

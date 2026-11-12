@@ -6,15 +6,16 @@ import "windows" as W
 import "services" as S
 
 ShellRoot {
+    S.Lock {}
+    S.Notifications {}
     Variants {
         model: Quickshell.screens
-        F.Frame {
+        F.Master {
             required property var modelData
             screen: modelData
         }
     }
-    S.Lock {}
-    S.Notifications {}
+
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
         model: Quickshell.screens

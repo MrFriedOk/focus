@@ -3,6 +3,7 @@ import QtQuick
 import qs.data as D
 import "panels" as P
 import "."
+import "bar" as B
 
 Scope {
     id: rootTwo //lol i'm so sorry
@@ -10,7 +11,7 @@ Scope {
     property int barHeight: D.General.bar.size
     property color barCol: D.Theme.surface
     PanelWindow {
-        id: bar
+        id: fakeBar
         anchors {
             top: true
             left: true
@@ -63,9 +64,9 @@ Scope {
     }
     PanelWindow {
         id: root
-        readonly property int size: 500//D.General.bar.size + gap
+        //readonly property int size: 500//D.General.bar.size + gap
         readonly property int radius: D.General.radius
-        readonly property list<string> panels: [""]
+        //readonly property list<string> panels: [""]
         //the 'master' window
         color: "transparent"
         exclusionMode: ExclusionMode.Ignore
@@ -78,18 +79,14 @@ Scope {
 
         mask: Region {
             Region {
-                item: sideBar
+                item: bar
             }
-        }
-        HoverHandler {
-            id: hover
-        }
+        } //stop the window from blocking input
 
         Shape {}
 
-        SidePanel {
-            id: sideBar
-            size: 200
+        B.Bar {
+            id: bar
         }
     }
 }
