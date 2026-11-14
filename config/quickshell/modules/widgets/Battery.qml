@@ -4,6 +4,9 @@ import qs.common as C
 import qs.data as D
 
 C.Gauge {
+	id: root
+	property list<string> texts: [(D.Upower.progress.toFixed(2) * 100) + "%",D.Upower.device.state]
+	property string curText: texts[0]
     width: 100
     progress: D.Upower.progress
     lowCol: {
@@ -26,7 +29,7 @@ C.Gauge {
     }
 
     C.SequentialText {
-        text: (D.Upower.progress.toFixed(2) * 100) + "%"
+        text: root.curText
     }
 
     anchors {
