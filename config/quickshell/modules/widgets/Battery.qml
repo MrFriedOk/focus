@@ -5,6 +5,7 @@ import qs.data as D
 
 C.Gauge {
     width: 100
+    progress: D.Upower.progress
 
     anchors {
         top: parent.top

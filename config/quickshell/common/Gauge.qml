@@ -32,6 +32,21 @@ Rectangle {
                 bottom: parent.bottom
             }
 
+            gradient: Gradient {
+                orientation: Gradient.Horizontal
+
+                GradientStop {
+                    position: 1
+                    color: D.Theme.surfaceOn
+                }
+
+                GradientStop {
+                    position: 0
+                    color: D.Theme.primaryOn
+                }
+
+            }
+
         }
 
     }
