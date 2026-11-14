@@ -18,8 +18,9 @@ Shape {
     }
 
     Timer {
+        //debug
         interval: 1000
-        running: true
+        running: false
         repeat: true
         onTriggered: console.log("height,", root.height, " gap,", root.gap, " startX/Y,", path.startX, path.startY)
     }
@@ -51,7 +52,7 @@ Shape {
         }
 
         PathArc {
-            x: root.width - root.gap
+            x: root.width // - root.gap
             y: root.height + root.radius
             radiusX: root.radius
             radiusY: root.radius
@@ -59,7 +60,7 @@ Shape {
         }
 
         PathLine {
-            x: root.width
+            x: root.width - root.radius
             y: root.height
         }
 
