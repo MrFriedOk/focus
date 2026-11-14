@@ -7,6 +7,9 @@ C.Gauge {
 	id: root
 	property list<string> texts: [(D.Upower.progress.toFixed(2) * 100) + "%",D.Upower.device.state]
 	property string curText: texts[0]
+
+	
+
     width: 100
     progress: D.Upower.progress
     lowCol: {
