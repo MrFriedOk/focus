@@ -55,6 +55,14 @@ Shape {
             y: root.height
         }
 
+        PathArc {
+            x: root.width - root.gap
+            y: root.height + root.radius
+            radiusX: root.radius
+            radiusY: root.radius
+            direction: PathArc.Clockwise
+        }
+
     }
 
 }
