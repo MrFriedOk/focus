@@ -6,6 +6,8 @@ Rectangle {
     id: root
 
     property real progress: 0
+    property color highCol: D.Theme.primaryOn
+    property color lowCol: D.Theme.surfaceOn
 
     color: D.Theme.primary
     radius: height * 2
@@ -37,12 +39,12 @@ Rectangle {
 
                 GradientStop {
                     position: 1
-                    color: D.Theme.surfaceOn
+                    color: root.lowCol
                 }
 
                 GradientStop {
                     position: 0
-                    color: D.Theme.primaryOn
+                    color: root.highCol
                 }
 
             }
