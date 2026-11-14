@@ -48,20 +48,20 @@ Shape {
 
         PathLine {
             y: 0
-            x: root.width + root.radius
+            x: root.width - root.gap
         }
 
         PathLine {
-            x: root.width
-            y: root.height - root.radius
+            x: root.width - root.gap
+            y: root.height + root.radius
         }
 
         PathArc {
-            x: root.width + root.radius
-            y: root.height //- root.gap //root.height + root.gap
+            x: root.width - root.gap - root.radius
+            y: root.height // + root.radius //- root.gap //root.height + root.gap
             radiusX: root.radius
             radiusY: root.radius
-            direction: PathArc.Clockwise
+            direction: PathArc.Counterclockwise
         }
 
     }
