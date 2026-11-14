@@ -17,7 +17,7 @@ Item {
     BarShape {
     }
 
-    W.Battery {
+    W.Audio {
     }
 
 }
