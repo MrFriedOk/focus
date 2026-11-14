@@ -34,10 +34,10 @@ Shape {
 
         PathArc {
             x: root.gap
-            y: root.height - root.radius
+            y: root.height + root.radius
             radiusX: root.radius
             radiusY: root.radius
-            direction: PathArc.Clockwise
+            direction: PathArc.Counterclockwise
         }
 
         PathLine {
