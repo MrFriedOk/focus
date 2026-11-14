@@ -17,11 +17,18 @@ Shape {
         right: parent.right
     }
 
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: console.log("height,", root.height, " gap,", root.gap, " startX/Y,", path.startX, path.startY)
+    }
+
     ShapePath {
         id: path
 
         fillColor: D.Theme.surfaceVar
-        startX: root.gap // - root.radius
+        startX: root.gap + root.radius
         startY: root.height
         strokeWidth: -1
 
