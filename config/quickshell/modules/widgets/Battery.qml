@@ -10,9 +10,23 @@ C.Gauge {
         if (progress > 0.6)
             return "#92c78f";
 
+        if (progress < 0.3)
+            return "#eea277";
+        else
+            return "#b0c079";
     }
     highCol: {
-        "#b0c079";
+        if (progress > 0.6)
+            return "#b0c079";
+
+        if (progress < 0.3)
+            return "#f7989a";
+        else
+            return "#eea277";
+    }
+
+    C.SequentialText {
+        text: D.Upower.progress.text
     }
 
     anchors {

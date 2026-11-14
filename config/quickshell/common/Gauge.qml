@@ -53,6 +53,20 @@ Rectangle {
 
     }
 
+    Behavior on highCol {
+        ColorAnimation {
+            duration: D.General.anim.dur
+        }
+
+    }
+
+    Behavior on lowCol {
+        ColorAnimation {
+            duration: D.General.anim.dur
+        }
+
+    }
+
     Behavior on progress {
         NumberAnimation {
             duration: D.General.anim.dur
