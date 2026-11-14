@@ -1,4 +1,4 @@
-import qs.data
+import qs.data as D
 import Quickshell
 import QtQuick
 
@@ -12,8 +12,8 @@ Text {
     }
 
     font {
-        bold: D.Font.bold
-        family: D.Font.family
+        bold: D.General.font.bold
+        family: D.General.font.family
     }
 
 }

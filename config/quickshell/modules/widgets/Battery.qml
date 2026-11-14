@@ -26,7 +26,7 @@ C.Gauge {
     }
 
     C.SequentialText {
-        text: D.Upower.progress.text
+        text: (D.Upower.progress.toFixed(2) * 100) + "%"
     }
 
     anchors {
