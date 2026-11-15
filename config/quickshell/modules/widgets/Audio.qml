@@ -6,13 +6,14 @@ import Quickshell
 C.Gauge {
     id: root
 
-    property real volume: D.Audio.vol
+    readonly property real volume: D.Audio.vol
 
     text: "hi"
     progress: volume.toFixed(2) //D.Audio.vol.toFixed(2)
     width: 100
 
     WheelHandler {
+        onWheel: console.log("hi")
     }
 
     anchors {
