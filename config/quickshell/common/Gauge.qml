@@ -12,7 +12,7 @@ Rectangle {
     property color lowCol: D.Theme.surfaceOn
 
     color: D.Theme.primary
-    radius: height * 2
+    radius: height * 2 //Math.max(height * 2, Math.min(width, height))
 
     SequentialText {
         id: text
@@ -41,7 +41,6 @@ Rectangle {
 
         Rectangle {
             //fill gradient
-            clip: true
             radius: parent.radius
             width: parent.width * root.progress
 

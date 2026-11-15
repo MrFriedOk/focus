@@ -8,7 +8,7 @@ C.Gauge {
 
     readonly property real volume: D.Audio.vol
 
-    text: (Math.round(volume.toFixed(2) * 100)) + "%"
+    text: "vol " + (Math.round(volume.toFixed(2) * 100)) + "%"
     progress: volume.toFixed(2)
     //D.Audio.vol.toFixed(2)
     width: 100
