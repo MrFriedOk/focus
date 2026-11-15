@@ -17,7 +17,8 @@ Rectangle {
     SequentialText {
         id: text
 
-        color: "red"
+        z: 1
+        color: D.Theme.surfaceVar
         text: "qgioh"
 
         anchors {
