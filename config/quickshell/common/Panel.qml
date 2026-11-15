@@ -15,6 +15,10 @@ Item {
     implicitWidth: side ? thick : length
     implicitHeight: side ? length : thick
 
+    Rectangle {
+        anchors.fill: parent
+    }
+
     anchors {
         verticalCenter: side ? parent.verticalCenter : false
         //verticalCenterOffset: root.gap
@@ -28,24 +32,26 @@ Item {
         }
 
         ShapePath {
-            readonly property real r: Math.max(0, Math.min(root.radius, (root.thick - root.gap) / 2, root.length / 2))
+            id: path
 
+            readonly property real r: root.radius //Math.max(0, Math.min(root.radius, (root.thick - root.gap) / 2, root.length / 2))
+
+            startX: 0 //-path.r //-path.r //0 + root.radius
+            startY: root.gap //root.gap + path.r
             strokeWidth: -1
             fillColor: D.Theme.surfaceVar
-            startX: -r //0 + root.radius
-            startY: root.gap
 
             PathArc {
-                x: 0
-                y: root.gap + r
-                radiusX: r
-                radiusY: r
+                x: 0 - path.r
+                y: path.r - root.gap
+                radiusX: path.r
+                radiusY: path.r
                 direction: PathArc.Clockwise
             }
 
             PathLine {
-                y: root.thick - r
-                x: 0
+                y: root.thick + path.r
+                x: 0 - path.r
             }
 
             PathLine {
@@ -56,6 +62,10 @@ Item {
             PathLine {
                 y: root.gap
                 x: root.length
+            }
+
+            PathArc {
+                direction: PathArc.Counterclockwise
             }
 
         }
