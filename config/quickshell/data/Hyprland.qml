@@ -1,5 +1,12 @@
 pragma Singleton
 import Quickshell
 import Quickshell.Hyprland
+import QtQuick
 
-Singleton {}
+Singleton {
+	property var workspaces: Hyprland.workspaces
+
+	function moveWorkspace(wkspc: var): void {
+
+	}
+}

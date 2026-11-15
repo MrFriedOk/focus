@@ -84,7 +84,7 @@ Rectangle {
 
     Behavior on progress {
         NumberAnimation {
-            duration: D.General.anim.dur
+            duration: D.General.anim.durShort
         }
 
     }
