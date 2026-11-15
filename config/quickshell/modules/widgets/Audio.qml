@@ -23,7 +23,7 @@ C.Gauge {
 
     MouseArea {
         onWheel: (e) => {
-            D.Audio.setVol(e);
+            D.Audio.setVol(e.angleDelta.y);
         }
 
         anchors {
