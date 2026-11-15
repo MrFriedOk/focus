@@ -7,7 +7,8 @@ import qs.common as C
 Item {
     id: root
 
-    property alias text: text.text
+		property alias text: text.text
+		property list<real> hist: []
 
     width: 100
 
@@ -45,7 +46,7 @@ Item {
             strokeWidth: 2
 
             PathPolyline {
-                path: D.Monitor.cpuHist.map((v, i) => {
+                path: root.hist.map((v, i) => {
                     return Qt.point(i * (graph.width / 59), graph.height * (1 - v));
                 })
             }

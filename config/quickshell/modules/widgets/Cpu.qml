@@ -5,4 +5,5 @@ import QtQuick
 
 C.Graph {
     text: "cpu"
+    hist: D.Monitor.cpuHist
 }
