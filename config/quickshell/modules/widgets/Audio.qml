@@ -12,8 +12,14 @@ C.Gauge {
     progress: volume.toFixed(2) //D.Audio.vol.toFixed(2)
     width: 100
 
-    WheelHandler {
+    MouseArea {
+        enabled: true
         onWheel: console.log("hi")
+
+        anchors {
+            fill: parent
+        }
+
     }
 
     anchors {
