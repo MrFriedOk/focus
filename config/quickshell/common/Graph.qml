@@ -2,6 +2,7 @@ import QtQuick.Shapes
 import QtQuick
 import Quickshell
 import qs.data as D
+import qs.common as C
 
 Item {
     width: 100
@@ -10,6 +11,12 @@ Item {
         top: parent.top
         bottom: parent.bottom
         bottomMargin: 3
+        topMargin: 3
+    }
+
+    C.SequentialText {
+        text: "cpu"
+        color: D.Theme.primary
     }
 
     Shape {
@@ -54,8 +61,8 @@ Item {
             strokeWidth: 2
 
             PathLine {
-                x: shapeY.width
-                y: pathY.startY
+                x: pathY.startX
+                y: 0
             }
 
         }
