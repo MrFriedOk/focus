@@ -17,7 +17,13 @@ Rectangle {
     SequentialText {
         id: text
 
-        text: ""
+        color: "red"
+        text: "qgioh"
+
+        anchors {
+            fill: parent
+        }
+
     }
 
     Rectangle {

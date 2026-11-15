@@ -7,10 +7,6 @@ Text {
     horizontalAlignment: Text.AlignHCenter
     color: D.Theme.primary
 
-    anchors {
-        fill: parent
-    }
-
     font {
         bold: D.General.font.bold
         family: D.General.font.family

@@ -8,19 +8,10 @@ C.Gauge {
 
     readonly property real volume: D.Audio.vol
 
-    text: "hi"
-    progress: volume.toFixed(2) //D.Audio.vol.toFixed(2)
+    //text: "iuwhguigh"
+    progress: volume.toFixed(2)
+    //D.Audio.vol.toFixed(2)
     width: 100
-
-    MouseArea {
-        enabled: true
-        onWheel: console.log("hi")
-
-        anchors {
-            fill: parent
-        }
-
-    }
 
     anchors {
         top: parent.top
