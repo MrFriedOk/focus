@@ -34,4 +34,16 @@ Item {
 
     }
 
+    RowLayout {
+        anchors {
+            right: parent.right
+            top: parent.top
+            bottom: parent.bottom
+        }
+
+        W.Cpu {
+        }
+
+    }
+
 }
