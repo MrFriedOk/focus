@@ -4,9 +4,14 @@ import Quickshell.Io
 import QtQuick
 
 Singleton {
+	id: root
 
 	property real cpu: 0
 	property list<real> cpuHist: []
+	property real _prevTotal: 0
+	property real _prevIdle: 0
+	
+	
 
     FileView {
         id: stats
@@ -15,11 +20,21 @@ Singleton {
     }
 
     Timer {
-        interval: 2000
+        interval: 1000
         running: true
         repeat: true
         onTriggered: {
-            stats.reload();
+					stats.reload();
+					const f = stats.text().split("\n")[0].trim().split(/\s+/).slice(1).map(Number)
+
+            const idle = f[3] + f[4]                       // idle + iowait
+            const total = f.reduce((a, b) => a + b, 0)
+            const dTotal = total - root._prevTotal
+            const dIdle = idle - root._prevIdle
+            if (dTotal > 0) root.cpu = 1 - dIdle / dTotal
+            root._prevTotal = total
+            root._prevIdle = idle
+            root.cpuHist = [...root.cpuHist, root.cpu].slice(-60)
         }
     }
 

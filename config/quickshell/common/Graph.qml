@@ -32,6 +32,29 @@ Item {
     }
 
     Shape {
+        id: graph
+
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+        }
+
+        ShapePath {
+            strokeColor: D.Theme.primaryOn
+            strokeWidth: 2
+
+            PathPolyline {
+                path: D.Monitor.cpuHist.map((v, i) => {
+                    return Qt.point(i * (graph.width / 59), graph.height * (1 - v));
+                })
+            }
+
+        }
+
+    }
+
+    Shape {
         //x axis
         id: shapeX
 
