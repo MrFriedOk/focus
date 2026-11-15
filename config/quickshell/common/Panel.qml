@@ -22,24 +22,29 @@ Item {
         horizontalCenter: side ? false : parent.horizontalCenter
     }
 
-    Rectangle {
-        anchors.fill: parent
-        color: "transparent"
-    }
-
     Shape {
         anchors {
             fill: parent
         }
 
         ShapePath {
+            readonly property real r: Math.max(0, Math.min(root.radius, (root.thick - root.gap) / 2, root.length / 2))
+
             strokeWidth: -1
             fillColor: D.Theme.surfaceVar
-            startX: 0
+            startX: -r //0 + root.radius
             startY: root.gap
 
+            PathArc {
+                x: 0
+                y: root.gap + r
+                radiusX: r
+                radiusY: r
+                direction: PathArc.Clockwise
+            }
+
             PathLine {
-                y: root.thick
+                y: root.thick - r
                 x: 0
             }
 
