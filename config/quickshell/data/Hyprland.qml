@@ -7,6 +7,6 @@ Singleton {
 	property var workspaces: Hyprland.workspaces
 
 	function moveWorkspace(wkspc: var): void {
-
+			
 	}
 }

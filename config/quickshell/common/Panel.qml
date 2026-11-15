@@ -4,7 +4,7 @@ import QtQuick
 import QtQuick.Shapes
 import QtQml
 
-Shape {
+Item {
     id: root
 
     enum Side {
@@ -15,19 +15,23 @@ Shape {
     }
 
     property int side: Panel.Left
-
     property bool vertical: Panel.Right || Panel.Left
-
     property real size: 100
-
     property real corner: D.General.radius
     property real fillet: D.General.radius
-
     property real startX: 0
     property real startY: 0
 
-    ShapePath {
-        startX: root.startX
-        startY: root.startY
+    rotation: [0, 180, 270, 90][root.side]
+
+    Shape {
+        id: shape
+
+        ShapePath {
+            startX: root.startX
+            startY: root.startY
+        }
+
     }
+
 }
