@@ -31,6 +31,8 @@ text: curText
             return "#eea277";
     }
 
+
+
     anchors {
         top: parent.top
         bottom: parent.bottom

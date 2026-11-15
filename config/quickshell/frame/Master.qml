@@ -40,7 +40,6 @@ Scope {
         }
 
         C.Panel {
-            side: Side.Bottom
         }
 
         mask: Region {

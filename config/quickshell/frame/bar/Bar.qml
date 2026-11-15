@@ -14,10 +14,11 @@ Item {
         left: parent.left
     }
 
-    BarShape {
+    W.Audio {
+        z: 1
     }
 
-    W.Audio {
+    BarShape {
     }
 
 }
