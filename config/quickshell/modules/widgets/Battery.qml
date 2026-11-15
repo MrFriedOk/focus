@@ -7,7 +7,7 @@ C.Gauge {
 	id: root
 	property list<string> texts: [(D.Upower.progress.toFixed(2) * 100) + "%",D.Upower.device.state]
 	property string curText: texts[0]
-
+text: curText
 	
 
     width: 100
@@ -29,10 +29,6 @@ C.Gauge {
             return "#f7989a";
         else
             return "#eea277";
-    }
-
-    C.SequentialText {
-        text: root.curText
     }
 
     anchors {

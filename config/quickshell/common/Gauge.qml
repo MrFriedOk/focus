@@ -1,16 +1,24 @@
 import QtQuick
 import Quickshell
 import qs.data as D
+import "."
 
 Rectangle {
     id: root
 
     property real progress: 0
+    property alias text: text.text
     property color highCol: D.Theme.primaryOn
     property color lowCol: D.Theme.surfaceOn
 
     color: D.Theme.primary
     radius: height * 2
+
+    SequentialText {
+        id: text
+
+        text: ""
+    }
 
     Rectangle {
         //empty status
