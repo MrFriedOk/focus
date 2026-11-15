@@ -6,19 +6,19 @@ import QtQuick
 
 Singleton {
     //}
+    //readonly property QtObject
+    //p: QtObject {
 
     id: root
 
-    //readonly property QtObject
-    //p: QtObject {
     readonly property PwNode sink: Pipewire.defaultAudioSink
-    property real vol: sink.audio.volume
+    property real vol: sink?.audio?.volume ?? 0 //fallbacks n stuff
 
-    Timer {
-        running: true
-        repeat: true
-        onTriggered: console.log(root.vol, root.sink)
-        interval: 1000
-    }
+    //bind just default node for now
+    PwObjectTracker {
+        objects: root.sink
+			}
+
+
 
 }
