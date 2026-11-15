@@ -39,6 +39,7 @@ Item {
             right: parent.right
             top: parent.top
             bottom: parent.bottom
+            rightMargin: D.General.bar.gap
         }
 
         W.Cpu {
