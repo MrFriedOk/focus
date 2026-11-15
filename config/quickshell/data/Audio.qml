@@ -21,7 +21,7 @@ Singleton {
 
 	function setVol(v: real): void {
 		if (sink?.audio)
-		console.log("hi");
-		sink.audio.volume = Math.max(0,Math.min(1,v));
+		if ()
+		sink.audio.volume += 0.01;
 	}
 }

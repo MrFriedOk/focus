@@ -44,6 +44,7 @@ Scope {
 
         mask: Region {
             Region {
+                item: bar
             }
             //stop the window from blocking input
 

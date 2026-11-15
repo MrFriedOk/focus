@@ -21,4 +21,15 @@ C.Gauge {
         margins: 2
     }
 
+    MouseArea {
+        onWheel: (e) => {
+            D.Audio.setVol(e);
+        }
+
+        anchors {
+            fill: parent
+        }
+
+    }
+
 }
