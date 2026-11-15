@@ -40,8 +40,12 @@ Scope {
         }
 
         C.Panel {
+            length: 500
+            thick: 20
+
             anchors {
                 bottom: parent.bottom
+                bottomMargin: D.General.bar.gap
             }
 
         }
