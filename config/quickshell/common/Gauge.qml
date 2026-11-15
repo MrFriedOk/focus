@@ -19,7 +19,7 @@ Rectangle {
 
         z: 1
         color: D.Theme.surfaceVar
-        text: "qgioh"
+        text: ""
 
         anchors {
             fill: parent
@@ -30,6 +30,7 @@ Rectangle {
     Rectangle {
         //empty status
 
+        clip: true
         radius: parent.radius
         color: D.Theme.surface
 
@@ -40,7 +41,7 @@ Rectangle {
 
         Rectangle {
             //fill gradient
-
+            clip: true
             radius: parent.radius
             width: parent.width * root.progress
 

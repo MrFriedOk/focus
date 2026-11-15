@@ -8,14 +8,17 @@ C.Gauge {
 
     readonly property real volume: D.Audio.vol
 
-    //text: "iuwhguigh"
+    text: (Math.round(volume.toFixed(2) * 100)) + "%"
     progress: volume.toFixed(2)
     //D.Audio.vol.toFixed(2)
     width: 100
+    highCol: "#e0ad4d"
+    lowCol: "#e0cd4d"
 
     anchors {
         top: parent.top
         bottom: parent.bottom
+        margins: 2
     }
 
 }

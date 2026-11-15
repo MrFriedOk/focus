@@ -8,7 +8,7 @@ Text {
     color: D.Theme.surfaceVar
 
     font {
-        pointSize: parent.height / 2
+        pointSize: 12
         bold: D.General.font.bold
         family: D.General.font.family
     }
