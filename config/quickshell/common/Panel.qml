@@ -61,10 +61,14 @@ Item {
 
             PathLine {
                 y: root.gap
-                x: root.length
+                x: root.length - path.r
             }
 
             PathArc {
+                radiusX: path.r
+                radiusY: path.r
+                x: root.length + path.r
+                y: root.gap + path.r
                 direction: PathArc.Counterclockwise
             }
 
