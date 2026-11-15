@@ -20,11 +20,15 @@ Singleton {
 			}
 
 			function setVol(v: real): void {
-				console.log(v)
-		if (sink?.audio)
-		if (v > 0)
-		sink.audio.volume += 0.01;
-		else 
-		sink.audio.volume -= 0.01
+				if (sink?.audio)
+					if (vol <= 1.0)
+						if (v > 0)
+							sink.audio.volume += 0.01;
+						else 
+							sink.audio.volume -= 0.01
+					else
+					sink.audio.volume = 0
+
+					//vol = vol;
 	}
 }
