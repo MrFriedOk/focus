@@ -14,11 +14,13 @@ Singleton {
     readonly property PwNode sink: Pipewire.defaultAudioSink
     property real vol: sink?.audio?.volume ?? 0 //fallbacks n stuff
 
-    //bind just default node for now
+    //bind just default node for now but for safety, check it exists 
     PwObjectTracker {
-        objects: root.sink
+			objects: root.sink ? [root.sink] : []
 			}
 
-
-
+	function setVol(v: real): void {
+		if (sink?.audio)
+		sink.audio.volume = Math.max(0,Math.min(1,v))
+	}
 }
