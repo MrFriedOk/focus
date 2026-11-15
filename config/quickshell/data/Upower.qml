@@ -11,4 +11,5 @@ Singleton {
     readonly property real changeRate: device.changeRate
     readonly property real full: device.timeToFull
     readonly property real empty: device.timeToEmpty
+    readonly property bool isBat: device.isLaptopBattery
 }

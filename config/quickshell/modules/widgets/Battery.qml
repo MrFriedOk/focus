@@ -4,6 +4,7 @@ import qs.common as C
 import qs.data as D
 
 C.Gauge {
+	visible: D.Upower.isBat
 	id: root
 	property list<string> texts: [(D.Upower.progress.toFixed(2) * 100) + "%",D.Upower.device.state]
 	property string curText: texts[0]
