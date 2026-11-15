@@ -17,7 +17,17 @@ Item {
     BarShape {
     }
 
-    W.Audio {
+    Row {
+        anchors {
+            left: parent.left
+            top: parent.top
+            bottom: parent.bottom
+            leftMargin: D.General.bar.gap
+        }
+
+        W.Audio {
+        }
+
     }
 
 }
