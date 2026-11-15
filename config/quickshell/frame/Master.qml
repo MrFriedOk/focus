@@ -5,36 +5,51 @@ import "panels" as P
 import "."
 import "bar" as B
 import qs.modules as M
+import qs.common as C
 
 Scope {
     PanelWindow {
+        color: "transparent"
+        implicitHeight: D.General.bar.size - D.General.bar.gap
+
         //fake bar
         anchors {
             top: true
             left: true
             right: true
         }
-        color: "transparent"
-        implicitHeight: D.General.bar.size - D.General.bar.gap
+
     }
+
     PanelWindow {
         id: root
 
         //the 'master' window
         color: "transparent"
         exclusionMode: ExclusionMode.Ignore
+
         anchors {
             left: true
             top: true
             bottom: true
             right: true
         }
-        mask: Region {
-            Region {}
-        } //stop the window from blocking input
 
         B.Bar {
             id: bar
         }
+
+        C.Panel {
+            side: Side.Bottom
+        }
+
+        mask: Region {
+            Region {
+            }
+            //stop the window from blocking input
+
+        }
+
     }
+
 }
