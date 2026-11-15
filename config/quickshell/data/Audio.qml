@@ -19,7 +19,7 @@ Singleton {
 			objects: root.sink ? [root.sink] : []
 			}
 
-			function setVol(v: real): void {
+			function setVol(v: real): void { //take in angleDelta.y, since thi should increase on scroll up/down
 				if (sink?.audio)
 					if (vol <= 1.0)
 						if (v > 0)

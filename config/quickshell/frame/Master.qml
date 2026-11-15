@@ -40,6 +40,10 @@ Scope {
         }
 
         C.Panel {
+            anchors {
+                bottom: parent.bottom
+            }
+
         }
 
         mask: Region {
