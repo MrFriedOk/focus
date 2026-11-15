@@ -5,6 +5,10 @@ import qs.data as D
 import qs.common as C
 
 Item {
+    id: root
+
+    property alias text: text.text
+
     width: 100
 
     anchors {
@@ -15,8 +19,16 @@ Item {
     }
 
     C.SequentialText {
-        text: "cpu"
+        id: text
+
+        text: "placeholder"
         color: D.Theme.primary
+        verticalAlignment: Text.AlignVCenter
+
+        anchors {
+            fill: parent
+        }
+
     }
 
     Shape {
