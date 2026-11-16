@@ -6,18 +6,23 @@ import Quickshell.Services.Pam
 
 Rectangle {
     id: root
+
+    width: 100
+    height: 100
+
     //property bool locked: D.Lock.locked
     anchors {
         top: parent.top
         right: parent.right
     }
-    width: 100
-    height: 100
 
     MouseArea {
+        onClicked: D.Lock.unlock()
+
         anchors {
             fill: parent
         }
-        onClicked: D.Lock.toggle()
+
     }
+
 }
