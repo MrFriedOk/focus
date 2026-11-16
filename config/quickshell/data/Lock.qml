@@ -4,17 +4,26 @@ import Quickshell.Wayland
 import QtQuick
 
 Singleton {
+    //locked = true;
+
     id: root
 
     property real progress: 0
     property bool locked: false
     readonly property Animation
-    enterAnim: NumberAnimation {
-        target: root
-        property: "progress"
-        to: 1
-        duration: 5000
-        easing.type: Easing.InOutQuad
+    enterAnim: SequentialAnimation {
+        NumberAnimation {
+            target: root
+            property: "progress"
+            to: 1
+            duration: 500
+            easing.type: Easing.InOutQuad
+        }
+
+        ScriptAction {
+            script: root.locked = true
+        }
+
     }
 
     readonly property Animation
@@ -37,14 +46,15 @@ Singleton {
     //    locked = !locked;
     //}
     function unlock() {
-        enterAnim.stop();
+        //enterAnim.stop();
+        //exitAnim.restart();
         exitAnim.restart();
     }
 
     function lock() {
-        exitAnim.stop();
-        locked = true;
+        //exitAnim.stop();
         enterAnim.restart();
+        locked = true;
     }
 
 }
