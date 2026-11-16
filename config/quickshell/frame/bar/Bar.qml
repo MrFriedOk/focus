@@ -18,7 +18,9 @@ Item {
     BarShape {
     }
 
-    RowLayout {
+    Row {
+        spacing: 5
+
         anchors {
             left: parent.left
             top: parent.top
@@ -34,7 +36,9 @@ Item {
 
     }
 
-    RowLayout {
+    Row {
+        spacing: 5
+
         anchors {
             right: parent.right
             top: parent.top
@@ -43,6 +47,9 @@ Item {
         }
 
         W.Cpu {
+        }
+
+        W.Memory {
         }
 
     }
