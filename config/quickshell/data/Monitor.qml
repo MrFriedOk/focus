@@ -21,10 +21,12 @@ Singleton {
 
 	function memUpdate() {
 		memF.reload()
-		const total = memF.text().split("\n")[0].trim().split(/\s/).slice(1).map(Number)
+		const total = (memF.text().split("\n")[0].trim().split(/\s/).slice(1).map(Number))[6]
 
-		const free = memF.text().split("\n")[1].trim().split(/\s/).slice(1).map(Number)
-		console.log(total,"\n",free)
+		const free = (memF.text().split("\n")[1].trim().split(/\s/).slice(1).map(Number))[8]
+
+		const used = (free/total)
+		console.log(used)
 
 
 	}
