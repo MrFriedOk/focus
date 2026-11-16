@@ -48,11 +48,13 @@ Item {
 						fillColor: D.Theme.primaryOn
 
 						PathPolyline {
+
+								readonly property real pad: pathG.strokeWidth
 							path: {
 								if (root.delta)
-								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v) - pathG.strokeWidth)})
+								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), pad +(root.height - 2 * pad)  * (1 - v))})
 								else 
-								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), graph.height * (1 - v) - pathG.strokeWidth)})
+								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), pad + (root.height - 2 * pad) * (1 - v))})
 							}
             }
 
