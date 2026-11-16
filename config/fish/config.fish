@@ -6,6 +6,8 @@ alias ls='eza -l -a -F --icons=auto'
 alias lst='eza -t --icons=auto'
 alias l="eza -1 -a"
 
+alias c='clear'
+
 alias g='gitui'
 
 alias n='nvim'

@@ -4,6 +4,8 @@ import Quickshell.Wayland
 import QtQuick
 
 Singleton {
+    //locked = true;
+
     id: root
 
     property real progress: 0
