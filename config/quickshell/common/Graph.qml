@@ -9,6 +9,7 @@ Item {
 
 		property alias text: text.text
 		property list<real> hist: []
+		property bool delta: true
 
     width: 100
 
@@ -45,10 +46,13 @@ Item {
             strokeColor: D.Theme.primaryOn
             strokeWidth: 2
 
-            PathPolyline {
-                path: root.hist.map((v, i) => {
-                    return Qt.point(i * (root.width / 59), root.height * (1 - v));
-                })
+						PathPolyline {
+							path: {
+								if (root.delta)
+								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v));})
+								else 
+								root.hist.map((v,i) => Qt.point(i*root.width/59,graph.height*(1-v)))
+							}
             }
 
         }

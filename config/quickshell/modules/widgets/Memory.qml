@@ -6,4 +6,5 @@ import qs.data as D
 C.Graph {
     hist: D.Monitor.memHist
     text: "mem"
+    delta: false
 }
