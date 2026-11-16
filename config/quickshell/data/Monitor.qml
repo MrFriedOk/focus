@@ -5,27 +5,9 @@ import QtQuick
 
 Singleton {
 	id: root
-
-	property real cpu: 0
-	property list<real> cpuHist: []
-	property real _prevTotal: 0
-	property real _prevIdle: 0
-	
-	
-
-    FileView {
-        id: stats
-
-        path: "/proc/stat"
-    }
-
-    Timer {
-        interval: 1000
-        running: true
-        repeat: true
-        onTriggered: {
-					stats.reload();
-					const f = stats.text().split("\n")[0].trim().split(/\s+/).slice(1).map(Number)
+	function cpuUpdate() {
+					cpu.reload();
+					const f = cpu.text().split("\n")[0].trim().split(/\s+/).slice(1).map(Number)
 
             const idle = f[3] + f[4]                       // idle + iowait
             const total = f.reduce((a, b) => a + b, 0)
@@ -35,6 +17,36 @@ Singleton {
             root._prevTotal = total
             root._prevIdle = idle
             root.cpuHist = [...root.cpuHist, root.cpu].slice(-60)
+	}
+
+	property real cpu: 0
+	property list<real> cpuHist: []
+	property real _prevTotal: 0
+	property real _prevIdle: 0
+
+property list<real> memHist: []
+	property real mem: 0
+
+	FileView{
+		id: mem
+
+		path: "/proc/meminfo"
+	}
+	
+	
+
+    FileView {
+        id: cpu
+
+        path: "/proc/stat"
+    }
+
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: {
+					root.cpuUpdate()	
         }
     }
 
