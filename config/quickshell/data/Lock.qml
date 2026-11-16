@@ -6,8 +6,11 @@ import QtQuick
 Singleton {
     //locked = true;
 
+<<<<<<< ours
     id: root
 
+=======
+>>>>>>> theirs
     property real progress: 0
     property bool locked: false
     readonly property Animation
@@ -46,13 +49,22 @@ Singleton {
     //    locked = !locked;
     //}
     function unlock() {
+<<<<<<< ours
         //enterAnim.stop();
         //exitAnim.restart();
+=======
+        enterAnim.stop();
+>>>>>>> theirs
         exitAnim.restart();
     }
 
     function lock() {
+<<<<<<< ours
         //exitAnim.stop();
+=======
+        exitAnim.stop();
+        //locked = true
+>>>>>>> theirs
         enterAnim.restart();
     }
 
