@@ -49,9 +49,9 @@ Item {
 						PathPolyline {
 							path: {
 								if (root.delta)
-								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v));})
+								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v))})
 								else 
-								root.hist.map((v,i) => Qt.point(i*root.width/59,root.height*(1-v)))
+								root.hist.map((v,i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v))})
 							}
             }
 

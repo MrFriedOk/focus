@@ -12,8 +12,8 @@ Singleton {
             const idle = f[3] + f[4]                       // idle + iowait
             const total = f.reduce((a, b) => a + b, 0)
             const dTotal = total - root._prevTotal
-            const dIdle = idle - root._prevIdle
-            if (dTotal > 0) root.cpu = 1 - dIdle / dTotal
+            const dIdle = idle - root._prevIdle //deltas
+            if (dTotal > 0) root.cpu = 1 - dIdle / dTotal //is delta greater than 0?
             root._prevTotal = total
             root._prevIdle = idle
             root.cpuHist = [...root.cpuHist, root.cpu].slice(-60)
@@ -30,7 +30,7 @@ Singleton {
 
 		root.mem = used
 
-		root.memHist = [...root.memHist, root.mem].slice(-60)
+		root.memHist = [...root.memHist, root.mem].slice(-60) //add new mem value on top of all others
 
 
 	}
