@@ -11,6 +11,11 @@ hl.bind("SUPER + T", hl.dsp.exec_cmd(term))
 
 hl.bind("SUPER + P", hl.dsp.exec_cmd("hyprshot -m region -f $(date '+%Y-%m-%d_%H.%M.%S.png') -o ~/Screenshots"))
 
+hl.bind("SUPER + L",hl.dsp.global("focus:lock"))
+
+-- move windows with mouse
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+
 --focus with arrows
 for i = 1, 4 do
 	local arrowkey = { "Left", "Right", "Up", "Down" }
@@ -58,11 +63,11 @@ hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 
 --you can have multiple special workspaces!!! :O
---hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.window.move({ workspace = "special:special" }))
-hl.bind("SUPER + ALT + S", hl.dsp.workspace.toggle_special("special"))
+hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }))
+--hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.window.move({ workspace = "special:special" }))
+--hl.bind("SUPER + ALT + S", hl.dsp.workspace.toggle_special("special"))
 
---hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("special"))
 
 hl.bind("SUPER + D", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 
