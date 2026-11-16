@@ -54,7 +54,6 @@ Singleton {
     function lock() {
         //exitAnim.stop();
         enterAnim.restart();
-        locked = true;
     }
 
 }
