@@ -36,22 +36,23 @@ Item {
     Shape {
         id: graph
 
-        anchors {
-            bottom: parent.bottom
-            left: parent.left
-            right: parent.right
+				anchors {
+					fill: parent
+					//bottomMargin: 2
         }
 
-        ShapePath {
+				ShapePath {
+					id: pathG
             strokeColor: D.Theme.primaryOn
-            strokeWidth: 2
+						strokeWidth: 2
+						fillColor: D.Theme.primaryOn
 
 						PathPolyline {
 							path: {
 								if (root.delta)
-								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v))})
+								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v) - pathG.strokeWidth)})
 								else 
-								root.hist.map((v,i) => {return Qt.point(i * (root.width / 59), root.height * (1 - v))})
+								root.hist.map((v, i) => {return Qt.point(i * (root.width / 59), graph.height * (1 - v) - pathG.strokeWidth)})
 							}
             }
 
