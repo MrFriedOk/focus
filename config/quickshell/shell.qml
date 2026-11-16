@@ -12,6 +12,9 @@ ShellRoot {
     S.Notifications {
     }
 
+    S.GlobalShortcuts {
+    }
+
     //stuff to draw every monitor, let's keep it minimal for now
     Variants {
         model: Quickshell.screens
