@@ -22,14 +22,17 @@ Singleton {
 	function memUpdate() {
 		memF.reload()
 		const total = (memF.text().split("\n")[0].trim().split(/\s/).slice(1).map(Number))[6]
-
 		const free = (memF.text().split("\n")[1].trim().split(/\s/).slice(1).map(Number))[8]
-
 		const used = (free/total).toFixed(5)
+
 		console.log(used)
 
-		if (used > 0)
+		const dUsed = used - root._prevMem
+		
+		if (dUsed > 0) //check if the delta is greater than 0
 		root.mem = used
+
+		root._prevMem = used
 			
 		root.memHist = [...root.memHist, root.mem].slice(-60)
 
@@ -40,6 +43,7 @@ Singleton {
 	property list<real> cpuHist: []
 	property real _prevTotal: 0
 	property real _prevIdle: 0
+	property real _prevMem: 0
 
 	property list<real> memHist: []
 	property real mem: 0
