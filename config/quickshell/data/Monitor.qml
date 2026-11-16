@@ -26,7 +26,7 @@ Singleton {
 		const avail = (memF.text().split("\n")[2].trim().split(/\s/).slice(1).map(Number))[2]
 		const used = (1 - avail/total).toFixed(5)
 
-		console.log(used,"\n",root.memHist,"\n",avail)
+		//console.log(used,"\n",root.memHist,"\n",avail)
 
 		root.mem = used
 
