@@ -47,7 +47,7 @@ Item {
 
             PathPolyline {
                 path: root.hist.map((v, i) => {
-                    return Qt.point(i * (graph.width / 59), graph.height * (1 - v));
+                    return Qt.point(i * (root.width / 59), root.height * (1 - v));
                 })
             }
 
