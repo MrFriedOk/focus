@@ -4,7 +4,7 @@ local w, h, step = 900, 600, 32
 hl.window_rule({
 	match = { class = "kitty" },
 	opacity = opacity,
-	--float = true,
+	float = true,
 	size = { w, h },
 	--	move = { "(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2" },
 })
@@ -14,6 +14,8 @@ hl.workspace_rule({ workspace = "special:magic", gaps_out = 4 })
 
 hl.window_rule({ match = { class = ".*" }, suppress_event = "maximize" })
 
+
+--cascade new kitties
 hl.on("window.open", function(w)
 	if not w or w.class ~= "kitty" then
 		return
