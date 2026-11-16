@@ -25,8 +25,13 @@ Singleton {
 
 		const free = (memF.text().split("\n")[1].trim().split(/\s/).slice(1).map(Number))[8]
 
-		const used = (free/total)
+		const used = (free/total).toFixed(5)
 		console.log(used)
+
+		if (used > 0)
+		root.mem = used
+			
+		root.memHist = [...root.memHist, root.mem].slice(-60)
 
 
 	}
