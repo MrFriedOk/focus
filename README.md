@@ -16,6 +16,8 @@ Mostly for my convenience, but these are things I have installed/configured/used
   - `fish`, shell
   - `starship`, fish initializes starship. No config required, but this rice does not have any config for it, so defaults will be used.
   - `eza`, better `ls`. Included in fish config.
+  - `ttf-atkinson-hyperlegible`, font in the kitty config. Not necessary, just make sure you have *a* font installed.
+  -  NMS GeoSans, stylized font used in Quickshell. Also not necessary, but looks kinda cool [find it here](https://github.com/NMSCD/No-Mans-Sky-Universal-Font/).
 ### Guide
 I main Arch Linux. I am sorry, but the line below is only applicable for `pacman`
 ```
