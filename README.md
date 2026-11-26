@@ -17,6 +17,7 @@ My problem with maurice was how the code was barely reusable, I genuinely sucked
 My aim with this project was to try to reuse code more, and I think I did do better (`Graph`, `Gauge`, for example). It's obviously not much and honestly a poor excuse for a "rice", but I would like to work on it more and try to implement features I had planned. Quickshell makes reusing code stupid easy (, you just make your own custom component and design it in a way that can actually be reused. I'm going to be doing this more, but I think it's fair to say I have cut down a little on the bloat of code that is maurice.
 
 ## Installing
+Get the latest [release](https://github.com/MrFriedOk/focus/releases).
 System-level configuring/installs are not handled, ensure you have the below installed. Configuration may not be necessary
 ### Dependencies 
   - `hyprland`, this is a Hyprland rice.
@@ -45,6 +46,20 @@ Each release (and the repo) contains an install script. Ensure that this script 
 
 Once the script has been run and the directories are in the right place, you should be good. Quickshell will not run, but should when Hyprland starts next session. Alternatively, run `qs -d` in the terminal (if already in Hyprland) to launch Quickshell and detach it from the terminal.
 It may also be helpful to run `hyprctl reload` to refresh the Hyprland config. Doing this will not run auto exec commands, however. 
+
+## Using
+Mentioned before, highly subjective keybinds. Hyprland's keybinding is the bare minimum *for me*, I haven't looked into what objectively works better but this is just what I am used to. Hyprland is also set to the dwindle layout.
+
+  - Super T, open Kitty
+  - Super {num}, change workspaces
+  - Super Shift {num}, move workspace and follow
+  - Super S, open "special" workspace (known as scratchpad in [illogical-impulse](https://github.com/end-4/dots-hyprland/) I think?)
+  - Super F, fullscreen focused window
+  - Super D, maximize focused window
+  - Some audio keys bindings set up (vol up/down), just set the XF86 bindings so your keyboard may not have them
+  - Super arrow, focus in direction
+  - Super Shift arrow, move window in direction
+
 ## References
   - [md3](https://paletacolorpro.com/en/material-design)
   - [Quickshell docs](https://quickshell.org/docs/v0.3.2/)
