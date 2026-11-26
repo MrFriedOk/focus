@@ -1,6 +1,21 @@
 # focus
 a placeholder name.
 
+# About
+I sort of gave up on maurice, my previous attempt to learn Quickshell, so I wanted to try something new and try to learn more.
+Not really a "rice", it's mostly just a Quickshell.. shell. It does come with the basics needed to get a desktop running, but there isn't much "ricing" beyond Quickshell. 
+
+## Quickshell
+The most visual aspect of the project, it's the bar, lock screen (WIP) and background (no wallpaper yet). The engine reacts to any changes, so any change to a value gives immediate visual feedback, and you don't need to worry about drawing a frame or updating stuff like you would literally anywhere else. 
+
+## Everything Else
+Hyprland/Kitty/Fish, the basics. They're setup for ease of use (and highly subjective configs), but they do work with Quickshell to make a desktop look more uniform. The whole project needs work, so everything looks bland right now. 
+
+## Process
+My problem with maurice was how the code was barely reusable, I genuinely sucked at not making spaghetti code and it caught up to me once I had put a lot of hours into it. 
+
+My aim with this project was to try to reuse code more, and I think I did do better (`Graph`, `Gauge`, for example). It's obviously not much and honestly a poor excuse for a "rice", but I would like to work on it more and try to implement features I had planned. Quickshell makes reusing code stupid easy (, you just make your own custom component and design it in a way that can actually be reused. I'm going to be doing this more, but I think it's fair to say I have cut down a little on the bloat of code that is maurice.
+
 ## Installing
 System-level configuring/installs are not handled, ensure you have the below installed. Configuration may not be necessary
 ### Dependencies 
