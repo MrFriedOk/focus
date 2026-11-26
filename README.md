@@ -61,6 +61,8 @@ sudo pacman -S --needed hyprland quickshell pipewire upower
 
 Each release (and the repo) contains an install script. Ensure that this script has execute perms. All it does is back up directories and copy the data from the `config` folder and puts them in the default config path for their corresponding app.
 
+Make sure you get the release's `.zip`, not the source code. Extract it and then run the `install.sh` script.
+
 > [!WARNING]
 > I have run this script several times but please run it with caution. Treat every directory it will replace and backup (`quickshell`,`fish`,`kitty`,`hypr`) as if it will **_NOT_** be backed up.
 > Be careful with scripts online!
