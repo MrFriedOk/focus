@@ -2,7 +2,7 @@
 
 a placeholder name.
 
-[![screenshot of a desktop. super exciting](assets/desktop.png)]
+![screenshot of a desktop. super exciting](assets/desktop.png)
 
 # About
 
