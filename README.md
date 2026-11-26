@@ -60,6 +60,10 @@ Mentioned before, highly subjective keybinds. Hyprland's keybinding is the bare 
   - Super arrow, focus in direction
   - Super Shift arrow, move window in direction
 
+Nothing in the Quickshell aspect is really interactive as of now, but the clock, being the only one of its kind for now (a `Dragable`, horrid spelling) can be moved around and stuff. Its position is saved to disk when placed down, so it will stay.
+
+The volume gauge can be scrolled to increase/decrease. I really need to fix it tho. Be careful with this one, it isn't particularly strong in terms of scrolling, but you shouldn't raise it too high (especially if you use a trackpad).
+
 ## References
   - [md3](https://paletacolorpro.com/en/material-design)
   - [Quickshell docs](https://quickshell.org/docs/v0.3.2/)
